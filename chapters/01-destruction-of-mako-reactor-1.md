@@ -2,7 +2,7 @@
 
 > **Bản dịch cá nhân, chỉ để tham khảo khi chơi.** Nội dung gốc thuộc về PowerPyx (tác giả Gage), đăng ngày 9/4/2020 tại
 > <https://www.powerpyx.com/final-fantasy-7-vii-remake-chapter-1-the-destruction-of-mako-reactor-1-walkthrough/>.
-> Bản gốc có bản quyền; không phát hành lại bản dịch này công khai. Hãy xem bài gốc để có đầy đủ ảnh minh họa.
+> Bản gốc có bản quyền của PowerPyx; hãy xem bài gốc để có đầy đủ ảnh minh họa và ủng hộ tác giả.
 > Quy ước: tên mục tiêu, vật phẩm, kẻ địch, kỹ năng, Materia giữ nguyên tiếng Anh như trong game.
 > Nút bấm theo tay cầm PlayStation: □ = Square, ✕ = Cross, ○ = Circle.
 

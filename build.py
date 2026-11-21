@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Dựng trang web tĩnh từ chapters/*.md vào site/. Chỉ dùng thư viện chuẩn.
+"""Dựng trang web tĩnh từ chapters/*.md vào docs/. Chỉ dùng thư viện chuẩn.
 
 Chạy:  python3 build.py
-Xem thử:  cd site && python3 -m http.server 8765
+Xem thử:  cd docs && python3 -m http.server 8765
 """
 import html
 import re
@@ -11,7 +11,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "chapters"
-OUT = ROOT / "site"
+OUT = ROOT / "docs"
 ASSETS = ROOT / "web-assets"
 
 SITE_TITLE = "Final Fantasy VII Remake — Hướng dẫn tiếng Việt"
@@ -162,7 +162,7 @@ def main():
                   "<p>Bản dịch tiếng Việt cá nhân các bài hướng dẫn của PowerPyx, dùng để tra cứu khi chơi. "
                   "Tiến độ mục tiêu lưu trong trình duyệt của bạn.</p>"
                   f'<ol class="chapters">{rows}</ol>'
-                  '<p class="note">Nội dung gốc thuộc về PowerPyx. Không phát hành lại công khai.</p>')
+                  '<p class="note">Nội dung gốc thuộc về PowerPyx. Đây là bản dịch cá nhân, không phải bản chính thức.</p>')
     (OUT / "index.html").write_text(page(SITE_TITLE, index_body, ""), encoding="utf-8")
     print(f"Đã dựng {len(chapters)} chương vào {OUT}")
 
