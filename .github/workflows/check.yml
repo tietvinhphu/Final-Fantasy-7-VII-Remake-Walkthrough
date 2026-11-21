@@ -1,0 +1,45 @@
+name: check
+
+# Mỗi lần push hoặc mở PR: kiểm tra kiểu, kiểm tra nội dung, dựng thử.
+# Không deploy: GitHub Pages vẫn phát hành từ nhánh main, thư mục gốc.
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  site:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: site
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+      - name: Cài phụ thuộc (đúng theo package-lock)
+        run: npm ci
+      - name: Kiểm tra kiểu và nội dung
+        run: npm run check
+      - name: Dựng thử
+        run: npm run build
+      - name: Bản đã dựng trong repo có khớp mã nguồn không
+        # Chỉ cảnh báo: khác biệt nhỏ giữa máy dựng có thể xảy ra. Nếu lệch thật, chạy lại publish:root và commit.
+        continue-on-error: true
+        working-directory: .
+        run: |
+          (cd site && npm run publish:root)
+          if [ -n "$(git status --porcelain -- index.html 404.html chuong _next assets robots.txt)" ]; then
+            echo "::warning::Bản đã dựng ở gốc repo không khớp mã nguồn. Chạy 'npm run publish:root' trong site/ rồi commit."
+            git status --short -- index.html 404.html chuong _next assets robots.txt | head -20
+            exit 1
+          fi

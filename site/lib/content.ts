@@ -136,7 +136,11 @@ function parseBlocks(lines: string[]): Node[] {
       out.push({ t: "ol", items });
       continue;
     }
-    const para: string[] = [];
+    if (ln.trim() === ":::") {
+      i++; // dấu đóng khối thừa: bỏ qua (validate-content sẽ báo lỗi)
+      continue;
+    }
+    const para: string[] = [lines[i++].trim()]; // luôn tiêu thụ ít nhất một dòng, tránh vòng lặp vô hạn
     while (i < lines.length && lines[i].trim() && !/^(:::|>|[-*] |\d+\. )/.test(lines[i])) para.push(lines[i++].trim());
     out.push({ t: "p", text: para.join(" ") });
   }

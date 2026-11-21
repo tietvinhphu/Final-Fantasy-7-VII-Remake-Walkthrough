@@ -9,5 +9,7 @@ export default {
   images: { unoptimized: true },
   poweredByHeader: false,
   reactStrictMode: true,
+  // Mã build cố định: bản dựng giống hệt nhau giữa các lần/máy, git không có thay đổi vô nghĩa.
+  generateBuildId: async () => "static",
   env: { NEXT_PUBLIC_BASE: BASE },
 };
