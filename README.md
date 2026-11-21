@@ -1,23 +1,40 @@
 # Final Fantasy VII Remake — Hướng dẫn tiếng Việt
 
-Bản dịch tiếng Việt **không chính thức**, dùng để tra cứu khi chơi, từ loạt hướng dẫn Final Fantasy VII Remake của **PowerPyx** (tác giả Gage): <https://www.powerpyx.com/>.
+Hướng dẫn tiếng Việt **không chính thức**, dùng để tra cứu khi chơi, viết lại từ loạt hướng dẫn Final Fantasy VII Remake của **PowerPyx** (tác giả Gage): <https://www.powerpyx.com/guide/final-fantasy-vii-remake/>.
 
 **Nguồn và bản quyền:** nội dung gốc và hình ảnh thuộc bản quyền PowerPyx. Mỗi trang có liên kết về bài gốc. Nếu chủ sở hữu yêu cầu gỡ, nội dung sẽ được gỡ.
 
 **Trang web:** https://tietvinhphu.github.io/Final-Fantasy-7-VII-Remake-Walkthrough/
 
-## Các chương đã dịch
+## Tiến độ
 
-| Chương | Bài gốc |
+| Phần | Trạng thái |
 | --- | --- |
-| 1. The Destruction of Mako Reactor 1 | <https://www.powerpyx.com/final-fantasy-7-vii-remake-chapter-1-the-destruction-of-mako-reactor-1-walkthrough/> |
-| 2. Fateful Encounters | <https://www.powerpyx.com/final-fantasy-7-vii-remake-chapter-2-fateful-encounters-walkthrough/> |
+| Cốt truyện, Chương 1–18 (rương, vật phẩm, boss, mẹo Hard Mode, hình minh họa) | Xong |
+| Nhiệm vụ phụ (26 nhiệm vụ, sẽ gộp vào đúng chương) | Chưa làm |
+| Sưu tầm và trang bị (Materia, Armor, Accessory, Summon, Music Disc...) | Chưa làm |
+| Boss và hệ thống chiến đấu (Stagger, Hard Mode, Fort Condor, danh sách kẻ địch) | Chưa làm |
+| DLC Yuffie (INTERmission) | Chưa làm |
+
+## Giao diện
+
+- Timeline từng bước với đường sáng chạy theo thanh cuộn, nút bước bật sáng khi tới.
+- Thẻ **rương** (hổ phách), **vật phẩm nhặt** (tím), **boss** (đỏ, kèm điểm yếu), **mẹo** và **Hard Mode**.
+- Mỗi bước có ô "Xong" lưu trong trình duyệt, kèm thanh tiến độ chương và vòng tiến độ ở trang chủ.
+- Hình minh họa bấm để xem lớn (lightbox, phím mũi tên và vuốt trên điện thoại).
+- Giao diện sáng/tối, tôn trọng `prefers-reduced-motion`, dùng được trên điện thoại.
+- Không dùng thư viện hay font ngoài, không có công cụ theo dõi.
 
 ## Cấu trúc và cách dựng lại
 
-- `chapters/*.md`: bản dịch (nguồn). Mỗi file bắt đầu bằng ghi chú nguồn.
-- `images/chNN/`: hình minh họa lấy từ bài gốc, đặt đúng vị trí như trong bài.
-- `build.py`: chuyển Markdown thành HTML tĩnh ở gốc repo, không cần thư viện ngoài. Chạy `python3 build.py`.
+- `chapters/NN-*.md`: nội dung từng chương (nguồn). Định dạng mô tả ở đầu `build.py`.
+- `images/chNN/` và `images/manifest.json`: hình lấy từ bài gốc, ghép đúng mục theo tên mục tiêu.
+- `web-assets/`: `style.css`, `app.js`, `robots.txt`.
+- `build.py`: chuyển Markdown thành HTML tĩnh ở gốc repo, chỉ dùng thư viện chuẩn của Python. Chạy `python3 build.py`.
 - `index.html`, `chapter-NN.html`, `style.css`, `app.js`: trang đã dựng, GitHub Pages phát hành từ gốc repo.
 
-Quy ước dịch: tên mục tiêu, vật phẩm, kẻ địch, kỹ năng và Materia giữ nguyên tiếng Anh như trong game. Nút bấm theo tay cầm PlayStation (□ ✕ ○).
+Xem thử trên máy: `python3 -m http.server 8765` ở thư mục gốc, rồi mở `http://127.0.0.1:8765/`.
+
+## Quy ước
+
+Tên mục tiêu, vật phẩm, kẻ địch, kỹ năng và Materia giữ nguyên tiếng Anh như trong game. Nút bấm theo tay cầm PlayStation (□ ✕ ○ △). Phần lời hướng dẫn được viết lại gọn bằng tiếng Việt, không dịch từng chữ.
