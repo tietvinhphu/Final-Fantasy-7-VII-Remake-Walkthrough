@@ -1,0 +1,1125 @@
+{
+ "01": [
+  {
+   "section": "Enter the Reactor Grounds",
+   "files": [
+    "images/ch01/01.jpg",
+    "images/ch01/02.jpg",
+    "images/ch01/03.jpg"
+   ]
+  },
+  {
+   "section": "Infiltrate the Reactor",
+   "files": [
+    "images/ch01/04.jpg"
+   ]
+  },
+  {
+   "section": "Follow Barret",
+   "files": [
+    "images/ch01/05.jpg"
+   ]
+  },
+  {
+   "section": "Breach Security",
+   "files": [
+    "images/ch01/06.jpg"
+   ]
+  },
+  {
+   "section": "Follow Jessie",
+   "files": [
+    "images/ch01/07.jpg",
+    "images/ch01/08.jpg",
+    "images/ch01/09.jpg",
+    "images/ch01/10.jpg",
+    "images/ch01/11.jpg"
+   ]
+  },
+  {
+   "section": "Set the Charge",
+   "files": [
+    "images/ch01/12.jpg",
+    "images/ch01/13.jpg"
+   ]
+  },
+  {
+   "section": "Boss Fight: Scorpion Sentinel",
+   "files": [
+    "images/ch01/14.jpg"
+   ]
+  },
+  {
+   "section": "Rendezvous with Barret",
+   "files": [
+    "images/ch01/15.jpg",
+    "images/ch01/16.jpg",
+    "images/ch01/17.jpg"
+   ]
+  }
+ ],
+ "02": [
+  {
+   "section": "Use the Escape Route",
+   "files": [
+    "images/ch02/01.jpg",
+    "images/ch02/02.jpg"
+   ]
+  },
+  {
+   "section": "Reach the Sector 8 Station",
+   "files": [
+    "images/ch02/03.jpg",
+    "images/ch02/04.jpg"
+   ]
+  },
+  {
+   "section": "Taking a Detour",
+   "files": [
+    "images/ch02/05.jpg",
+    "images/ch02/06.jpg"
+   ]
+  },
+  {
+   "section": "Evade Pursuers",
+   "files": [
+    "images/ch02/07.jpg",
+    "images/ch02/08.jpg",
+    "images/ch02/09.jpg",
+    "images/ch02/10.jpg"
+   ]
+  },
+  {
+   "section": "Flight through the City/Climb to the Roof",
+   "files": [
+    "images/ch02/11.jpg"
+   ]
+  },
+  {
+   "section": "Break the Blockade",
+   "files": [
+    "images/ch02/12.jpg",
+    "images/ch02/13.jpg",
+    "images/ch02/14.jpg",
+    "images/ch02/15.jpg",
+    "images/ch02/16.jpg",
+    "images/ch02/17.jpg",
+    "images/ch02/18.jpg"
+   ]
+  }
+ ],
+ "03": [
+  {
+   "section": "Return to Base",
+   "files": [
+    "images/ch03/01.jpg",
+    "images/ch03/02.jpg"
+   ]
+  },
+  {
+   "section": "Life in the Slums",
+   "files": [
+    "images/ch03/03.jpg",
+    "images/ch03/04.jpg",
+    "images/ch03/05.jpg",
+    "images/ch03/06.jpg",
+    "images/ch03/07.jpg",
+    "images/ch03/08.jpg",
+    "images/ch03/09.jpg",
+    "images/ch03/10.jpg",
+    "images/ch03/11.jpg",
+    "images/ch03/12.jpg",
+    "images/ch03/13.jpg"
+   ]
+  },
+  {
+   "section": "A Job for the Neighborhood Watch",
+   "files": [
+    "images/ch03/14.jpg",
+    "images/ch03/15.jpg",
+    "images/ch03/16.jpg",
+    "images/ch03/17.jpg",
+    "images/ch03/18.jpg"
+   ]
+  },
+  {
+   "section": "Problem Solving",
+   "files": [
+    "images/ch03/19.jpg",
+    "images/ch03/20.jpg",
+    "images/ch03/21.jpg",
+    "images/ch03/22.jpg"
+   ]
+  },
+  {
+   "section": "Shinra Reacts",
+   "files": [
+    "images/ch03/23.jpg",
+    "images/ch03/24.jpg"
+   ]
+  },
+  {
+   "section": "Talking Strategy",
+   "files": [
+    "images/ch03/25.jpg",
+    "images/ch03/26.jpg"
+   ]
+  },
+  {
+   "section": "Ominous Shadows",
+   "files": [
+    "images/ch03/27.jpg"
+   ]
+  }
+ ],
+ "04": [
+  {
+   "section": "Motor Chase",
+   "files": [
+    "images/ch04/01.jpg",
+    "images/ch04/02.jpg"
+   ]
+  },
+  {
+   "section": "The Jessie Job",
+   "files": [
+    "images/ch04/03.jpg"
+   ]
+  },
+  {
+   "section": "Sector 7-6 Annex Infiltration",
+   "files": [
+    "images/ch04/04.jpg",
+    "images/ch04/05.jpg"
+   ]
+  },
+  {
+   "section": "A Little Diversion",
+   "files": [
+    "images/ch04/06.jpg",
+    "images/ch04/07.jpg",
+    "images/ch04/08.jpg",
+    "images/ch04/09.jpg",
+    "images/ch04/10.jpg",
+    "images/ch04/11.jpg",
+    "images/ch04/12.jpg"
+   ]
+  },
+  {
+   "section": "Boss Fight: Roche",
+   "files": [
+    "images/ch04/13.jpg"
+   ]
+  },
+  {
+   "section": "Return to the Slums",
+   "files": [
+    "images/ch04/14.jpg"
+   ]
+  },
+  {
+   "section": "Sudden Attack",
+   "files": [
+    "images/ch04/15.jpg"
+   ]
+  },
+  {
+   "section": "A New Operation",
+   "files": [
+    "images/ch04/16.jpg"
+   ]
+  }
+ ],
+ "05": [
+  {
+   "section": "All Aboard for Sector 4",
+   "files": [
+    "images/ch05/01.jpg"
+   ]
+  },
+  {
+   "section": "Separate Ways",
+   "files": [
+    "images/ch05/02.jpg"
+   ]
+  },
+  {
+   "section": "Looking for a Friend",
+   "files": [
+    "images/ch05/03.jpg"
+   ]
+  },
+  {
+   "section": "Find Stamp/The Nose Knows",
+   "files": [
+    "images/ch05/04.jpg",
+    "images/ch05/05.jpg",
+    "images/ch05/06.jpg",
+    "images/ch05/07.jpg",
+    "images/ch05/08.jpg",
+    "images/ch05/09.jpg",
+    "images/ch05/10.jpg",
+    "images/ch05/11.jpg",
+    "images/ch05/12.jpg",
+    "images/ch05/13.jpg",
+    "images/ch05/14.jpg",
+    "images/ch05/15.jpg"
+   ]
+  },
+  {
+   "section": "Check the Route",
+   "files": [
+    "images/ch05/16.jpg",
+    "images/ch05/17.jpg"
+   ]
+  },
+  {
+   "section": "Train Yard Security",
+   "files": [
+    "images/ch05/18.jpg"
+   ]
+  },
+  {
+   "section": "Secret Passageway/Stairway Detour",
+   "files": [
+    "images/ch05/19.jpg",
+    "images/ch05/20.jpg"
+   ]
+  },
+  {
+   "section": "Boss Fight: Crab Warden",
+   "files": [
+    "images/ch05/21.jpg"
+   ]
+  }
+ ],
+ "06": [
+  {
+   "section": "Head for Section G",
+   "files": [
+    "images/ch06/01.jpg"
+   ]
+  },
+  {
+   "section": "Secure a Power Source",
+   "files": [
+    "images/ch06/02.jpg"
+   ]
+  },
+  {
+   "section": "Head for Section H",
+   "files": [
+    "images/ch06/03.jpg"
+   ]
+  },
+  {
+   "section": "Discovery: Collapsed Passageway",
+   "files": [
+    "images/ch06/04.jpg",
+    "images/ch06/05.jpg"
+   ]
+  },
+  {
+   "section": "The Way to Section H",
+   "files": [
+    "images/ch06/06.jpg",
+    "images/ch06/07.jpg"
+   ]
+  },
+  {
+   "section": "Power for the Platform/One Sun Lamp Down",
+   "files": [
+    "images/ch06/08.jpg"
+   ]
+  },
+  {
+   "section": "Console Online/Two Sun Lamps Down",
+   "files": [
+    "images/ch06/09.jpg",
+    "images/ch06/10.jpg",
+    "images/ch06/11.jpg"
+   ]
+  },
+  {
+   "section": "Three Sun Lamps Down",
+   "files": [
+    "images/ch06/12.jpg",
+    "images/ch06/13.jpg",
+    "images/ch06/14.jpg",
+    "images/ch06/15.jpg",
+    "images/ch06/16.jpg",
+    "images/ch06/17.jpg",
+    "images/ch06/18.jpg",
+    "images/ch06/19.jpg"
+   ]
+  },
+  {
+   "section": "To the Cargo Platform",
+   "files": [
+    "images/ch06/20.jpg"
+   ]
+  }
+ ],
+ "07": [
+  {
+   "section": "Down the Pipe",
+   "files": [
+    "images/ch07/01.jpg",
+    "images/ch07/02.jpg",
+    "images/ch07/03.jpg",
+    "images/ch07/04.jpg",
+    "images/ch07/05.jpg",
+    "images/ch07/06.jpg"
+   ]
+  },
+  {
+   "section": "Escape from the Reactor",
+   "files": [
+    "images/ch07/07.jpg"
+   ]
+  },
+  {
+   "section": "Monitor Data",
+   "files": [
+    "images/ch07/08.jpg",
+    "images/ch07/09.jpg",
+    "images/ch07/10.jpg",
+    "images/ch07/11.jpg",
+    "images/ch07/12.jpg",
+    "images/ch07/13.jpg",
+    "images/ch07/14.jpg",
+    "images/ch07/15.jpg",
+    "images/ch07/16.jpg"
+   ]
+  },
+  {
+   "section": "Storm the Gates",
+   "files": [
+    "images/ch07/17.jpg",
+    "images/ch07/18.jpg"
+   ]
+  },
+  {
+   "section": "Discovery: Waste Recovery",
+   "files": [
+    "images/ch07/19.jpg",
+    "images/ch07/20.jpg",
+    "images/ch07/21.jpg",
+    "images/ch07/22.jpg",
+    "images/ch07/23.jpg",
+    "images/ch07/24.jpg",
+    "images/ch07/25.jpg"
+   ]
+  },
+  {
+   "section": "Boss Fight: Airbuster",
+   "files": [
+    "images/ch07/26.jpg"
+   ]
+  }
+ ],
+ "08": [
+  {
+   "section": "Boss Fight: Reno",
+   "files": [
+    "images/ch08/01.jpg"
+   ]
+  },
+  {
+   "section": "Escape from the Church",
+   "files": [
+    "images/ch08/02.jpg"
+   ]
+  },
+  {
+   "section": "Rescue Aerith/To the Attic",
+   "files": [
+    "images/ch08/03.jpg"
+   ]
+  },
+  {
+   "section": "Head for the Station",
+   "files": [
+    "images/ch08/04.jpg",
+    "images/ch08/05.jpg",
+    "images/ch08/06.jpg"
+   ]
+  },
+  {
+   "section": "The Station",
+   "files": [
+    "images/ch08/07.jpg"
+   ]
+  },
+  {
+   "section": "Around the Gate/Discovery: The Gate Won’t Open",
+   "files": [
+    "images/ch08/08.jpg",
+    "images/ch08/09.jpg",
+    "images/ch08/10.jpg",
+    "images/ch08/11.jpg"
+   ]
+  },
+  {
+   "section": "Leaf House Delivery",
+   "files": [
+    "images/ch08/12.jpg",
+    "images/ch08/13.jpg",
+    "images/ch08/14.jpg",
+    "images/ch08/15.jpg",
+    "images/ch08/16.jpg",
+    "images/ch08/17.jpg",
+    "images/ch08/18.jpg"
+   ]
+  },
+  {
+   "section": "Danger in the Hideout",
+   "files": [
+    "images/ch08/19.jpg",
+    "images/ch08/20.jpg"
+   ]
+  },
+  {
+   "section": "Escort the Children",
+   "files": [
+    "images/ch08/21.jpg"
+   ]
+  },
+  {
+   "section": "Requests for the Mercenary",
+   "files": [
+    "images/ch08/22.jpg",
+    "images/ch08/23.jpg",
+    "images/ch08/24.jpg",
+    "images/ch08/25.jpg",
+    "images/ch08/26.jpg",
+    "images/ch08/27.jpg",
+    "images/ch08/28.jpg",
+    "images/ch08/29.jpg",
+    "images/ch08/30.jpg",
+    "images/ch08/31.jpg"
+   ]
+  },
+  {
+   "section": "Boss Fight: Rude",
+   "files": [
+    "images/ch08/32.jpg"
+   ]
+  },
+  {
+   "section": "Discover: The Language of Flowers",
+   "files": [
+    "images/ch08/33.jpg"
+   ]
+  }
+ ],
+ "09": [
+  {
+   "section": "Take the Shortcut",
+   "files": [
+    "images/ch09/01.jpg"
+   ]
+  },
+  {
+   "section": "Beyond the Ladder",
+   "files": [
+    "images/ch09/02.jpg",
+    "images/ch09/03.jpg",
+    "images/ch09/04.jpg"
+   ]
+  },
+  {
+   "section": "Working Together",
+   "files": [
+    "images/ch09/05.jpg",
+    "images/ch09/06.jpg",
+    "images/ch09/07.jpg"
+   ]
+  },
+  {
+   "section": "Beyond the Dead End",
+   "files": [
+    "images/ch09/08.jpg",
+    "images/ch09/09.jpg"
+   ]
+  },
+  {
+   "section": "Working Together Again",
+   "files": [
+    "images/ch09/10.jpg",
+    "images/ch09/11.jpg"
+   ]
+  },
+  {
+   "section": "Saying Goodbye",
+   "files": [
+    "images/ch09/12.jpg"
+   ]
+  },
+  {
+   "section": "Chasing Tifa",
+   "files": [
+    "images/ch09/13.jpg"
+   ]
+  },
+  {
+   "section": "To Corneo’s Mansion",
+   "files": [
+    "images/ch09/14.jpg",
+    "images/ch09/15.jpg",
+    "images/ch09/16.jpg"
+   ]
+  },
+  {
+   "section": "Discovery: Vagabond Johnny",
+   "files": [
+    "images/ch09/17.jpg",
+    "images/ch09/18.jpg",
+    "images/ch09/19.jpg"
+   ]
+  },
+  {
+   "section": "Sam",
+   "files": [
+    "images/ch09/20.jpg"
+   ]
+  },
+  {
+   "section": "Madam M’s Desire",
+   "files": [
+    "images/ch09/21.jpg",
+    "images/ch09/22.jpg"
+   ]
+  },
+  {
+   "section": "Bonus Round: Hell House Boss Fight",
+   "files": [
+    "images/ch09/23.jpg",
+    "images/ch09/24.jpg"
+   ]
+  },
+  {
+   "section": "Parting Ways",
+   "files": [
+    "images/ch09/25.jpg",
+    "images/ch09/26.jpg",
+    "images/ch09/27.jpg",
+    "images/ch09/28.jpg",
+    "images/ch09/29.jpg",
+    "images/ch09/30.jpg",
+    "images/ch09/31.jpg",
+    "images/ch09/32.jpg",
+    "images/ch09/33.jpg",
+    "images/ch09/34.jpg",
+    "images/ch09/35.jpg",
+    "images/ch09/36.jpg",
+    "images/ch09/37.jpg",
+    "images/ch09/38.jpg",
+    "images/ch09/39.jpg",
+    "images/ch09/40.jpg"
+   ]
+  },
+  {
+   "section": "Aerith’s Plan",
+   "files": [
+    "images/ch09/41.jpg"
+   ]
+  },
+  {
+   "section": "The Audition",
+   "files": [
+    "images/ch09/42.jpg",
+    "images/ch09/43.jpg"
+   ]
+  },
+  {
+   "section": "Showdown with Corneo",
+   "files": [
+    "images/ch09/44.jpg",
+    "images/ch09/45.jpg",
+    "images/ch09/46.jpg"
+   ]
+  }
+ ],
+ "10": [
+  {
+   "section": "Boss Fight: Abzu",
+   "files": [
+    "images/ch10/01.jpg"
+   ]
+  },
+  {
+   "section": "Follow the Waterway",
+   "files": [
+    "images/ch10/02.jpg",
+    "images/ch10/03.jpg",
+    "images/ch10/04.jpg",
+    "images/ch10/05.jpg",
+    "images/ch10/06.jpg",
+    "images/ch10/07.jpg",
+    "images/ch10/08.jpg",
+    "images/ch10/09.jpg",
+    "images/ch10/10.jpg"
+   ]
+  },
+  {
+   "section": "Crossing the Trunk Line",
+   "files": [
+    "images/ch10/11.jpg"
+   ]
+  },
+  {
+   "section": "To the Sector 7 Slums",
+   "files": [
+    "images/ch10/12.jpg",
+    "images/ch10/13.jpg",
+    "images/ch10/14.jpg"
+   ]
+  }
+ ],
+ "11": [
+  {
+   "section": "Toward the Light",
+   "files": [
+    "images/ch11/01.jpg",
+    "images/ch11/02.jpg"
+   ]
+  },
+  {
+   "section": "Someone’s There",
+   "files": [
+    "images/ch11/03.jpg",
+    "images/ch11/04.jpg"
+   ]
+  },
+  {
+   "section": "Pass Through the Maintenance Facility",
+   "files": [
+    "images/ch11/05.jpg"
+   ]
+  },
+  {
+   "section": "Shadow in the Control Room",
+   "files": [
+    "images/ch11/06.jpg",
+    "images/ch11/07.jpg",
+    "images/ch11/08.jpg",
+    "images/ch11/09.jpg",
+    "images/ch11/10.jpg",
+    "images/ch11/11.jpg"
+   ]
+  },
+  {
+   "section": "Boss Fight: Ghoul",
+   "files": [
+    "images/ch11/12.jpg"
+   ]
+  },
+  {
+   "section": "Head for the Exit",
+   "files": [
+    "images/ch11/13.jpg"
+   ]
+  },
+  {
+   "section": "Back Amongst Friends",
+   "files": [
+    "images/ch11/14.jpg"
+   ]
+  },
+  {
+   "section": "Clear the Way",
+   "files": [
+    "images/ch11/15.jpg"
+   ]
+  },
+  {
+   "section": "Boss Fight: Eligor",
+   "files": [
+    "images/ch11/16.jpg"
+   ]
+  }
+ ],
+ "12": [
+  {
+   "section": "Link Up with Avalanche",
+   "files": [
+    "images/ch12/01.jpg",
+    "images/ch12/02.jpg",
+    "images/ch12/03.jpg"
+   ]
+  },
+  {
+   "section": "Boss Fight: Reno & Rude",
+   "files": [
+    "images/ch12/04.jpg",
+    "images/ch12/05.jpg"
+   ]
+  }
+ ],
+ "13": [
+  {
+   "section": "Checking on Friends",
+   "files": [
+    "images/ch13/01.jpg"
+   ]
+  },
+  {
+   "section": "Onward to Sector 7",
+   "files": [
+    "images/ch13/02.jpg",
+    "images/ch13/03.jpg",
+    "images/ch13/04.jpg",
+    "images/ch13/05.jpg",
+    "images/ch13/06.jpg",
+    "images/ch13/07.jpg",
+    "images/ch13/08.jpg",
+    "images/ch13/09.jpg"
+   ]
+  },
+  {
+   "section": "In Solitude",
+   "files": [
+    "images/ch13/10.jpg",
+    "images/ch13/11.jpg",
+    "images/ch13/12.jpg",
+    "images/ch13/13.jpg",
+    "images/ch13/14.jpg"
+   ]
+  },
+  {
+   "section": "Finding Wedge",
+   "files": [
+    "images/ch13/15.jpg",
+    "images/ch13/16.jpg",
+    "images/ch13/17.jpg",
+    "images/ch13/18.jpg",
+    "images/ch13/19.jpg",
+    "images/ch13/20.jpg"
+   ]
+  },
+  {
+   "section": "Boss Fight: Failed Experiment",
+   "files": [
+    "images/ch13/21.jpg"
+   ]
+  }
+ ],
+ "14": [
+  {
+   "section": "Intel Gathering",
+   "files": [
+    "images/ch14/01.jpg",
+    "images/ch14/02.jpg",
+    "images/ch14/03.jpg",
+    "images/ch14/04.jpg",
+    "images/ch14/05.jpg",
+    "images/ch14/06.jpg",
+    "images/ch14/07.jpg",
+    "images/ch14/08.jpg",
+    "images/ch14/09.jpg",
+    "images/ch14/10.jpg",
+    "images/ch14/11.jpg"
+   ]
+  },
+  {
+   "section": "Discovery: Johnny’s Stolen Wallet",
+   "files": [
+    "images/ch14/12.jpg",
+    "images/ch14/13.jpg",
+    "images/ch14/14.jpg"
+   ]
+  },
+  {
+   "section": "Through the Underground Waterway",
+   "files": [
+    "images/ch14/15.jpg"
+   ]
+  },
+  {
+   "section": "The Hideout",
+   "files": [
+    "images/ch14/16.jpg"
+   ]
+  },
+  {
+   "section": "Recovering the Key",
+   "files": [
+    "images/ch14/17.jpg",
+    "images/ch14/18.jpg",
+    "images/ch14/19.jpg",
+    "images/ch14/20.jpg",
+    "images/ch14/21.jpg",
+    "images/ch14/22.jpg",
+    "images/ch14/23.jpg"
+   ]
+  },
+  {
+   "section": "Fateful Decisions",
+   "files": [
+    "images/ch14/24.jpg",
+    "images/ch14/25.jpg"
+   ]
+  },
+  {
+   "section": "Boss Fight: Abzu & Shoats",
+   "files": [
+    "images/ch14/26.jpg"
+   ]
+  },
+  {
+   "section": "Over the Wall",
+   "files": [
+    "images/ch14/27.jpg",
+    "images/ch14/28.jpg"
+   ]
+  }
+ ],
+ "15": [
+  {
+   "section": "The Climb",
+   "files": [
+    "images/ch15/01.jpg",
+    "images/ch15/02.jpg",
+    "images/ch15/03.jpg"
+   ]
+  },
+  {
+   "section": "Hiding in Plain Sight",
+   "files": [
+    "images/ch15/04.jpg",
+    "images/ch15/05.jpg"
+   ]
+  },
+  {
+   "section": "The Path to Greater Heights/The Crumbling Building",
+   "files": [
+    "images/ch15/06.jpg",
+    "images/ch15/07.jpg",
+    "images/ch15/08.jpg",
+    "images/ch15/09.jpg",
+    "images/ch15/10.jpg",
+    "images/ch15/11.jpg",
+    "images/ch15/12.jpg",
+    "images/ch15/13.jpg",
+    "images/ch15/14.jpg",
+    "images/ch15/15.jpg",
+    "images/ch15/16.jpg",
+    "images/ch15/17.jpg",
+    "images/ch15/18.jpg",
+    "images/ch15/19.jpg"
+   ]
+  },
+  {
+   "section": "In Hot Pursuit",
+   "files": [
+    "images/ch15/20.jpg"
+   ]
+  },
+  {
+   "section": "To the Top of the Plate",
+   "files": [
+    "images/ch15/21.jpg"
+   ]
+  },
+  {
+   "section": "Boss Fight: The Valkyrie",
+   "files": [
+    "images/ch15/22.jpg"
+   ]
+  }
+ ],
+ "16": [
+  {
+   "section": "Infiltration",
+   "files": [
+    "images/ch16/01.jpg"
+   ]
+  },
+  {
+   "section": "Bust Out of the Garage",
+   "files": [
+    "images/ch16/02.jpg",
+    "images/ch16/03.jpg"
+   ]
+  },
+  {
+   "section": "Shinra Building Intel",
+   "files": [
+    "images/ch16/04.jpg"
+   ]
+  },
+  {
+   "section": "Acquiring the Keycard",
+   "files": [
+    "images/ch16/05.jpg",
+    "images/ch16/06.jpg",
+    "images/ch16/07.jpg",
+    "images/ch16/08.jpg"
+   ]
+  },
+  {
+   "section": "Reach for the Skyview Hall",
+   "files": [
+    "images/ch16/09.jpg",
+    "images/ch16/10.jpg"
+   ]
+  },
+  {
+   "section": "A Helping Hand",
+   "files": [
+    "images/ch16/11.jpg",
+    "images/ch16/12.jpg",
+    "images/ch16/13.jpg"
+   ]
+  },
+  {
+   "section": "Reconnaissance",
+   "files": [
+    "images/ch16/14.jpg",
+    "images/ch16/15.jpg"
+   ]
+  },
+  {
+   "section": "Operation: Save Aerith",
+   "files": [
+    "images/ch16/16.jpg",
+    "images/ch16/17.jpg",
+    "images/ch16/18.jpg"
+   ]
+  },
+  {
+   "section": "Boss Fight: Specimen H01512",
+   "files": [
+    "images/ch16/19.jpg",
+    "images/ch16/20.jpg",
+    "images/ch16/21.jpg"
+   ]
+  }
+ ],
+ "17": [
+  {
+   "section": "A Way Out",
+   "files": [
+    "images/ch17/01.jpg",
+    "images/ch17/02.jpg",
+    "images/ch17/03.jpg",
+    "images/ch17/04.jpg"
+   ]
+  },
+  {
+   "section": "Find the Others",
+   "files": [
+    "images/ch17/05.jpg",
+    "images/ch17/06.jpg",
+    "images/ch17/07.jpg"
+   ]
+  },
+  {
+   "section": "Find Barret",
+   "files": [
+    "images/ch17/08.jpg",
+    "images/ch17/09.jpg",
+    "images/ch17/10.jpg"
+   ]
+  },
+  {
+   "section": "Research the 3rd Ward",
+   "files": [
+    "images/ch17/11.jpg",
+    "images/ch17/12.jpg"
+   ]
+  },
+  {
+   "section": "Use the Central Terminal",
+   "files": [
+    "images/ch17/13.jpg",
+    "images/ch17/14.jpg",
+    "images/ch17/15.jpg",
+    "images/ch17/16.jpg",
+    "images/ch17/17.jpg",
+    "images/ch17/18.jpg",
+    "images/ch17/19.jpg",
+    "images/ch17/20.jpg",
+    "images/ch17/21.jpg",
+    "images/ch17/22.jpg",
+    "images/ch17/23.jpg",
+    "images/ch17/24.jpg"
+   ]
+  },
+  {
+   "section": "4th Ward",
+   "files": [
+    "images/ch17/25.jpg"
+   ]
+  },
+  {
+   "section": "To the Central Terminal",
+   "files": [
+    "images/ch17/26.jpg",
+    "images/ch17/27.jpg"
+   ]
+  },
+  {
+   "section": "A Way Up",
+   "files": [
+    "images/ch17/28.jpg",
+    "images/ch17/29.jpg",
+    "images/ch17/30.jpg"
+   ]
+  },
+  {
+   "section": "Boss Fight: Jenova Dreamweaver",
+   "files": [
+    "images/ch17/31.jpg"
+   ]
+  },
+  {
+   "section": "Boss Fight: Rufus & Darkstar",
+   "files": [
+    "images/ch17/32.jpg",
+    "images/ch17/33.jpg"
+   ]
+  },
+  {
+   "section": "Boss Fight: The Arsenal",
+   "files": [
+    "images/ch17/34.jpg"
+   ]
+  }
+ ],
+ "18": [
+  {
+   "section": "Flying Through the Night",
+   "files": [
+    "images/ch18/01.jpg",
+    "images/ch18/02.jpg",
+    "images/ch18/03.jpg",
+    "images/ch18/04.jpg"
+   ]
+  },
+  {
+   "section": "Boss Fight: Motor Ball",
+   "files": [
+    "images/ch18/05.jpg",
+    "images/ch18/06.jpg",
+    "images/ch18/07.jpg",
+    "images/ch18/08.jpg",
+    "images/ch18/09.jpg",
+    "images/ch18/10.jpg"
+   ]
+  },
+  {
+   "section": "Boss Fight: Whisper Harbinger (Whisper Bahamut)",
+   "files": [
+    "images/ch18/11.jpg"
+   ]
+  },
+  {
+   "section": "Boss Fight: Sephiroth",
+   "files": [
+    "images/ch18/12.jpg"
+   ]
+  }
+ ]
+}
