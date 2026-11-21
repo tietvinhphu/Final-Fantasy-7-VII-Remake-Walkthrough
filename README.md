@@ -11,7 +11,7 @@ Hướng dẫn tiếng Việt **không chính thức**, dùng để tra cứu kh
 | Phần | Trạng thái |
 | --- | --- |
 | Cốt truyện, Chương 1–18 (rương, vật phẩm, boss, mẹo Hard Mode, hình minh họa) | Xong |
-| Nhiệm vụ phụ (26 nhiệm vụ, sẽ gộp vào đúng chương) | Chưa làm |
+| Nhiệm vụ phụ (26 nhiệm vụ, gộp vào Chương 3, 8, 9 và 14, kèm các lựa chọn phân nhánh của Chương 9) | Xong |
 | Sưu tầm và trang bị (Materia, Armor, Accessory, Summon, Music Disc...) | Chưa làm |
 | Boss và hệ thống chiến đấu (Stagger, Hard Mode, Fort Condor, danh sách kẻ địch) | Chưa làm |
 | DLC Yuffie (INTERmission) | Chưa làm |
@@ -19,7 +19,7 @@ Hướng dẫn tiếng Việt **không chính thức**, dùng để tra cứu kh
 ## Giao diện
 
 - Timeline từng bước với đường sáng chạy theo thanh cuộn, nút bước bật sáng khi tới.
-- Thẻ **rương** (hổ phách), **vật phẩm nhặt** (tím), **boss** (đỏ, kèm điểm yếu), **mẹo** và **Hard Mode**.
+- Thẻ **rương** (hổ phách), **vật phẩm nhặt** (tím), **boss** (đỏ, kèm điểm yếu), **mẹo** và **Hard Mode**. Nhiệm vụ phụ là các mục đánh số `S1, S2...` màu tím, có thẻ thông tin người giao, điều kiện mở khóa, phần thưởng; tiến độ của chúng đếm riêng, không tính vào tiến độ cốt truyện.
 - Mỗi bước có ô "Xong" lưu trong trình duyệt, kèm thanh tiến độ chương và vòng tiến độ ở trang chủ.
 - Hình minh họa bấm để xem lớn (lightbox, phím mũi tên và vuốt trên điện thoại). Lưới hiển thị ảnh thu nhỏ, bấm mới tải ảnh gốc.
 - Mục lục dính trên cùng khi cuộn trên điện thoại và tự cuộn tới mục đang đọc; có liên kết "Bỏ qua, tới nội dung" cho người dùng bàn phím.

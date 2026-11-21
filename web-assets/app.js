@@ -7,6 +7,8 @@
     function get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
     function set(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* không lưu được */ } }
     function readDone(key) { try { return JSON.parse(get(PREFIX + key)) || []; } catch (e) { return []; } }
+    // Nhiệm vụ phụ có id bắt đầu bằng 'side-quest-': không tính vào tiến độ cốt truyện.
+    function isMain(id) { return id.indexOf('side-quest-') !== 0; }
 
     // Chạy ngay trong <head>: tránh nháy giao diện, và chỉ ẩn phần reveal khi JS có mặt.
     root.classList.add('js');
@@ -112,12 +114,14 @@
         var boxes = document.querySelectorAll('input[data-step-box]');
         var meter = document.querySelector('.meter');
         var text = document.getElementById('meter-text');
+        var sideText = document.getElementById('side-text');
+        var sideTotal = parseInt(document.body.getAttribute('data-side-total'), 10) || 0;
 
         function paint() {
-            var n = 0;
+            var n = 0, ns = 0;
             boxes.forEach(function (b) {
                 var step = document.getElementById(b.getAttribute('data-step-box'));
-                if (b.checked) n += 1;
+                if (b.checked) { if (b.hasAttribute('data-side')) ns += 1; else n += 1; }
                 if (step) step.classList.toggle('complete', b.checked);
             });
             if (meter) {
@@ -125,6 +129,7 @@
                 meter.setAttribute('aria-valuenow', n);
             }
             if (text) text.textContent = n + '/' + total;
+            if (sideText) sideText.textContent = ns + '/' + sideTotal;
         }
         boxes.forEach(function (b) {
             b.checked = done.indexOf(b.getAttribute('data-step-box')) !== -1;
@@ -141,7 +146,7 @@
     function initHome() {
         document.querySelectorAll('a.ccard[data-chapter]').forEach(function (a) {
             var total = parseInt(a.getAttribute('data-total'), 10) || 0;
-            var n = readDone(a.getAttribute('data-chapter')).length;
+            var n = readDone(a.getAttribute('data-chapter')).filter(isMain).length;
             var ring = a.querySelector('.ring');
             if (ring && total) {
                 ring.style.setProperty('--p', Math.min(1, n / total));

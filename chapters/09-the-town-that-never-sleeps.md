@@ -5,7 +5,7 @@ area: Sector 6 Slums / Wall Market
 summary: Cùng Aerith vượt đường hầm đầy puzzle robot, vào Wall Market, vượt thử thách Colosseum với boss Hell House, nhảy cùng Andrea rồi đột nhập dinh thự Corneo.
 source: https://www.powerpyx.com/final-fantasy-7-vii-remake-chapter-9-the-town-that-never-sleeps-walkthrough/
 ---
-Chương dài nhất phần đầu game. Nó có các **lựa chọn ảnh hưởng nhiệm vụ phụ và trang phục** (xem mục Chasing Tifa), nhiều rương, Music Disc, và **Hell House**, một trong những boss khó nhất game. Chuẩn bị đủ Materia hệ và hồi máu trước khi vào Colosseum.
+Chương dài nhất phần đầu game. Nó có các **lựa chọn ảnh hưởng nhiệm vụ phụ và trang phục** (xem mục Chasing Tifa), nhiều rương, Music Disc, và **Hell House**, một trong những boss khó nhất game. Chuẩn bị đủ Materia hệ và hồi máu trước khi vào Colosseum. Năm nhiệm vụ phụ của chương nằm ngay trước bước "Rescue Tifa", kèm các lựa chọn bắt buộc để vào đúng nhánh.
 
 ## Tour Guide
 Hóa ra Aerith đã đi trước một bước và lẻn ra ngoài để giúp bạn quay về Sector 7.
@@ -276,6 +276,134 @@ Chỗ Chadley đứng có một cầu thang phía sau anh, leo hết lên đỉn
 :::
 
 Sau đó bạn đã lấy hết mọi thứ hiện có trong thị trấn và có thể về chỗ Madam M.
+
+## Side Quest: Burning Thighs
+:::quest Jules · Wall Market
+- Nhánh: có ở **cả hai** nhánh nhiệm vụ của chương.
+- Mở khóa: xong bước "Underground Colosseum".
+- Thưởng: **3 Mega-Potion**, hồi đầy HP và MP.
+:::
+
+Nhiệm vụ ngắn. Nói chuyện lại với Jules để học minigame squat: bấm lần lượt {△} {○} {✕} {□} theo biểu tượng trên màn hình. Sau một lúc biểu tượng mờ đi và nhịp nhanh hơn, hãy dựa vào nhịp, hoặc nhìn tư thế cơ thể Cloud để biết lúc bấm nút kế tiếp.
+
+Chỉ cần xong **hiệp đầu với Ronnie**, và gần như không thể thua vì anh ta liên tục gục xuống sàn. Thắng là Jules tự động đưa 3 Mega-Potion.
+
+:::tip Trophy Sultan of Squat
+Chơi lại các thử thách squat khó hơn để lấy trophy **Sultan of Squat** (đồng).
+:::
+
+## Side Quest: The Party Never Stops
+:::quest Clothing Store Owner's Son · Wall Market
+- Nhánh **A**, loại trừ **The Price of Thievery** và **Shears' Counterattack**. Cần làm đúng các lựa chọn bên dưới.
+- Thưởng: **Turbo Ether**, hồi HP/MP.
+:::
+
+:::warn Lựa chọn bắt buộc cho nhánh A
+Làm **đúng hết** các lựa chọn sau trong chương 9, nếu sai bạn sẽ nhận nhánh B thay thế:
+- Nói chuyện với **Sam** (Chocobo Cowboy), khi tả Tifa chọn **"She's in great Shape"**.
+- Ở Wall Market, hoàn thành sự kiện **Johnny Discovery** (Johnny bỏ chạy). Bắt được anh rồi chọn câu thoại đầu tiên **"Yeah"**.
+- Nói chuyện với gã đứng trước khách sạn (đầu Wall Market), chọn **"How much?"**.
+- Nói chuyện với lễ tân khách sạn, chọn **"Yes"**.
+- Tới biệt thự Corneo gặp Trio, khi Sam tung đồng xu chọn **"No deal."**
+- Chọn gói massage rẻ nhất, **"Poor Man's Course – 100G"**.
+- Khi Aerith hỏi thấy bộ đồ thế nào, chọn **"It's alright"**.
+- Xong bước "Underground Colosseum".
+:::
+
+Một chuỗi nhiệm vụ "nhờ vả" vòng vo: kéo ông bố say rượu về tiệm quần áo.
+
+1. **Drunkard's Den:** ra khỏi tiệm quần áo, Johnny chạy lại dẫn bạn tới quán rượu. Ông bố gục trên ghế bên phải quầy bar.
+2. **Materia Vendor:** ông bán Materia nằm dài, nhờ bạn đi lấy món từ máy bán hàng bí mật ở nhà trọ.
+3. **Máy bán hàng ở nhà trọ:** dùng **Assess** lên máy (Materia Assess càng cấp cao, tức đã Assess càng nhiều kẻ địch, càng may). Lần lượt ra **Vitalbrew**, **Crimson Spike**, **The Sauce**. Ba món này đem về cho Materia Vendor, ông bảo bạn tới nhà hàng.
+4. **Nhà hàng:** chủ quán xin lời khuyên sửa bếp. Chọn Stove, Fridge hay Power Supply đều như nhau. Phần thưởng tùy cấp Materia **Fire/Lightning/Ice** cao nhất của bạn: cấp 2 (Fira, Blizzara, Thundara) được **Remedy**, cấp 3 (Firaga, Blizzaga, Thundaga) được **Moogle Medal**. Dù thế nào bạn cũng nhận **Medicine Voucher**, thứ bạn thực sự cần.
+5. **Dược sĩ:** Johnny chạy khỏi nhà hàng vì đau bụng, bạn thấy anh gục quanh góc cùng một dược sĩ. Nói chuyện để nhận việc giao thuốc. Số người cần tìm phụ thuộc cấp **Cleansing Materia**: cấp 1 thì 1 người, cấp 2 thì 2, cấp 3 thì đủ 3. Thực ra chỉ cần tìm **một người** để sang bước sau, tìm thêm thì được thêm đồ.
+   - **Người 1:** quỳ bên bồn cầu trong nhà vệ sinh của Drunkard's Den.
+   - **Người 2:** gục dựa tường trong ngõ, gợi ý nói "sau phòng gym" nhưng thực ra ở **sau tiệm quần áo**, lối vào ngõ ở phía bắc tiệm.
+   - **Người 3:** cúi người chống gối trong ngõ nhỏ **phía nam tiệm massage**, rẽ phải ở ngã ba.
+6. Quay lại dược sĩ ở cửa hàng vật phẩm lấy **VIP Card**.
+7. Mang VIP Card về Drunkard's Den cho ông bố, ông bảo về gặp con trai.
+8. Về tiệm quần áo, nhận **Turbo Ether** và hồi đầy HP/MP.
+
+:::reward Turbo Ether
+Thưởng cuối chuỗi nhiệm vụ.
+:::
+
+## Side Quest: A Dynamite Body
+:::quest Sam · Wall Market
+- Nhánh **A**: cùng các lựa chọn như **The Party Never Stops**, và đã xong cả **The Party Never Stops** lẫn **Burning Thighs**.
+- Thưởng: **Arcane Scepter**, hồi HP/MP, **Manuscript: The Art of Swordplay Vol. X** (chỉ ở Hard Mode).
+:::
+
+Sam nhờ Cloud ra Colosseum, nghe nói để cứu Tifa. Tới Colosseum nói chuyện với **Gatekeeper**, chọn **Special Match**.
+
+:::boss Bomb (2 con)
+Loại quái mới ở giai đoạn này. Không có hệ yếu nhưng **kháng Fire**. Dùng Ice, Wind hoặc Lightning xen với đòn vật lý để hạ nhanh.
+:::
+
+Thắng xong có cắt cảnh ngắn, Sam đợi ở cửa ra và thưởng **Arcane Scepter**. Nếu bạn đã làm nhánh kia ở lần chơi chương 9 trước đó thì chỉ hồi HP/MP, không nhận lại vật phẩm.
+
+:::reward Arcane Scepter
+Vũ khí, chỉ nhận ở lần chơi chương 9 đầu tiên.
+:::
+
+:::reward Manuscript: The Art of Swordplay Vol. X
+Chỉ có khi chơi Hard Mode.
+:::
+
+## Side Quest: The Price of Thievery
+:::quest Mireille · Wall Market
+- Nhánh **B**, loại trừ **The Party Never Stops** và **A Dynamite Body**. Cần làm đúng các lựa chọn bên dưới.
+- Thưởng: **Real Calling Card**, hồi HP/MP, **Manuscript: The Art of Swordplay Vol. VIII** (chỉ ở Hard Mode).
+:::
+
+:::warn Lựa chọn bắt buộc cho nhánh B
+- Nói chuyện với **Sam**, khi tả Tifa chọn **"She's great at handling the books"**.
+- Ở Wall Market **không** nói chuyện với gã trước khách sạn và **không** nói chuyện với lễ tân.
+- **Bỏ qua** sự kiện Johnny Discovery (Johnny bỏ chạy), đi thẳng tới mục tiêu chính.
+- Khi Sam tung đồng xu chọn **"Heads"**.
+- Chọn gói massage đắt nhất, **"Luxury Course – 3000 Gil"**.
+- Khi Aerith hỏi thấy bộ đồ thế nào, chọn **"Looks comfortable"**.
+- Xong bước "Underground Colosseum" và "Parting Ways".
+:::
+
+Mireille nhờ bạn truy lùng một nhóm cướp trốn trong đường cao tốc sập. Đi về phía nam tới Evergreen Park, rồi lên phía bắc qua **đường hầm cao tốc** để đối mặt bọn cướp: lại là nhóm **Beck** cùng một **Grungy Bandit** đi kèm. Chúng gần như không đáng lo, đánh như lần trước.
+
+Xong thì tự động quay về Mireille, nhận **Real Calling Card** và hồi đầy HP/MP.
+
+:::reward Real Calling Card
+Thưởng từ Mireille.
+:::
+
+:::reward Manuscript: The Art of Swordplay Vol. VIII
+Chỉ có khi chơi Hard Mode.
+:::
+
+## Side Quest: Shears' Counterattack
+:::quest Gatekeeper · Wall Market
+- Nhánh **B**: cùng các lựa chọn như **The Price of Thievery**, và đã xong cả **Burning Thighs** lẫn **The Price of Thievery**.
+- Thưởng: **Arcane Scepter**, hồi HP/MP, **Manuscript: The Art of Swordplay Vol. IX** (chỉ ở Hard Mode).
+:::
+
+Gatekeeper của Colosseum mời bạn thử thách lần nữa. Nói chuyện với ông, chọn **Special Match**.
+
+:::boss Jury-Rigged Cutter
+weak: Lightning
+Bản nâng cấp của Cutter. Phép Lightning mạnh gây sát thương cực lớn. Nó đánh khá đau nhưng chậm và cồng kềnh, né được phần lớn đòn.
+:::
+
+Hạ xong, quay lại Madam M ở lối vào đấu trường nhận **Arcane Scepter**, nếu đây là lần chơi chương 9 đầu tiên, còn không thì chỉ hồi HP/MP.
+
+:::reward Arcane Scepter
+Vũ khí, chỉ nhận ở lần chơi chương 9 đầu tiên.
+:::
+
+:::reward Manuscript: The Art of Swordplay Vol. IX
+Chỉ có khi chơi Hard Mode.
+:::
+
+:::tip Best in the Business
+Hai nhánh loại trừ nhau trong cùng một lần chơi. Làm đủ **26 nhiệm vụ phụ** mới có trophy **Best in the Business**. Sau khi hết truyện, dùng **Chapter Select** để vào chương 9 làm nhánh còn lại, không cần chơi lại cả game.
+:::
 
 ## Rescue Tifa
 Khi bạn ra cửa, Johnny chạy tới, bạn đồng ý đi cùng anh để cứu Tifa. Tới dinh thự, Johnny bỏ đi vì nghĩ mình sẽ vướng chân, và bạn vào dinh thự một mình. Người gác cửa bảo đừng làm bậy nên bạn quay ra ngoài.

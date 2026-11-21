@@ -5,7 +5,7 @@ area: Sector 7 Slums
 summary: Về Seventh Heaven, khám phá khu ổ chuột, làm nhiệm vụ phụ cho Neighborhood Watch, chọn trang phục cho Tifa và nhận Ifrit Materia.
 source: https://www.powerpyx.com/final-fantasy-7-vii-remake-chapter-3-home-sweet-slum-walkthrough/
 ---
-Đây là chương đầu tiên mở ra thành phố để dạo quanh. Hãy dành thời gian: có 6 nhiệm vụ phụ chỉ làm được trong chương này, nhiều rương, Music Disc và hai lựa chọn có hệ quả về sau. Nhiệm vụ phụ chi tiết sẽ được bổ sung vào hướng dẫn ở một đợt sau.
+Đây là chương đầu tiên mở ra thành phố để dạo quanh. Hãy dành thời gian: có 6 nhiệm vụ phụ chỉ làm được trong chương này, nhiều rương, Music Disc và hai lựa chọn có hệ quả về sau. Cả 6 nhiệm vụ phụ nằm ngay dưới bước "Problem Solving", có tiêu đề **Side Quest**.
 
 ## Return to Base
 Đi theo đường một chiều xuống khu phố tới quán Seventh Heaven. Trên đường bạn có thể nghe NPC nói chuyện nhưng không có gì để nhặt. Tới bậc thềm quán, bạn tự động đưa Yellow Flower cho Tifa.
@@ -80,7 +80,7 @@ Tifa gợi ý tìm Wymer để nhận thêm việc. Nói chuyện với anh ta, 
 Chadley tặng. Gắn vào trang bị để phân tích đặc tính chiến đấu của kẻ địch cho cậu.
 :::
 
-Đây là một trong **6 nhiệm vụ phụ** của chương. Bạn chỉ cần xong **ít nhất một** để tiến cốt truyện, nhưng nên làm cả 6 vì nhiệm vụ phụ chỉ có trong chương của chúng và không làm lại được sau này. Sáu nhiệm vụ: **Lost Friends**, **Rat Problem**, **On the Prowl**, **Chadley's Report**, **Nuisance in the Factory** và **Just Flew In from the Graveyard**.
+Đây là một trong **6 nhiệm vụ phụ** của chương. Bạn chỉ cần xong **ít nhất một** để tiến cốt truyện, nhưng nên làm cả 6 vì nhiệm vụ phụ không làm tiếp được sau khi qua chương này (chỉ chơi lại được bằng Chapter Select sau khi hết truyện). Sáu nhiệm vụ: **Lost Friends**, **Rat Problem**, **On the Prowl**, **Chadley's Report**, **Nuisance in the Factory** và **Just Flew In from the Graveyard**.
 
 :::tip Bảng điểm Fiend
 Bên trái chỗ Chadley có bảng điểm đếm quái bạn đã hạ, nói chuyện với **Katie**. Hạ 10 quái được 5 Potions, 20 quái được Revival Earrings, 50 quái được MP Up Materia. Làm nhiệm vụ phụ thường là đủ, nếu thiếu có thể farm ở Scrap Boulevard, khu bụi bặm bên phải Chadley.
@@ -88,6 +88,117 @@ Bên trái chỗ Chadley có bảng điểm đếm quái bạn đã hạ, nói c
 
 :::pickup Music Disc 4. Barret's Theme
 Có thể quay lại nhà ga và mua ở một quầy ăn.
+:::
+
+## Side Quest: Lost Friends
+:::quest Betty · Residential Area
+- Mở khóa: sau khi nói chuyện với Chadley lần đầu ở bước "Problem Solving".
+- Thưởng: **A Maiden's Kiss** (chữa lời nguyền biến thành cóc), hồi đầy HP và MP.
+:::
+
+Betty nhờ bạn tìm ba chú mèo trắng của cô. Khi nhận nhiệm vụ cô cho ba gợi ý, nói chuyện lại bao nhiêu lần cũng được. Lại gần mèo bạn sẽ nghe tiếng meo và Tifa bình luận. Bấm {△} để tương tác với từng con.
+
+- **Mèo 1:** trên con đường ra khỏi khu dân cư, đoạn dẫn về phía đông tới Pillar Plaza (gợi ý "nơi đông người, như con đường ra ga").
+- **Mèo 2:** ngay trước quán Seventh Heaven, bên phải cửa vào (gợi ý "nơi có đồ ăn miễn phí").
+- **Mèo 3:** từ căn hộ bạn ở đi về phía đông, có mấy ngôi nhà vây quanh một sân sau hàng rào. Một phụ nữ có biểu tượng nhiệm vụ xanh lá đang nhìn vào một ống kim loại tối. Hãy chui qua ống đó, đầu bên kia là cái sân kín, mèo giấu khá kỹ ở đây (gợi ý "gần Beginner's Hall, chỗ có nhiều nhà bao quanh").
+
+Chạm con mèo cuối, game hỏi có quay về chỗ Betty ngay không. Nói chuyện với cô để nhận thưởng.
+
+:::reward A Maiden's Kiss
+Thưởng khi trả mèo cho Betty.
+:::
+
+## Side Quest: Rat Problem
+:::quest Item Store Owner · Residential Area
+- Mở khóa: sau khi nói chuyện với Chadley lần đầu ở "Problem Solving".
+- Thưởng: **5 Hi-Potion**, hồi đầy HP và MP, **Manuscript: The Art of Swordplay Vol. V** (chỉ ở Hard Mode).
+:::
+
+Chủ cửa hàng vật phẩm than bị chuột phá. Đánh dấu nhiệm vụ trên bản đồ rồi đi về phía bắc, lên cầu thang, vào phòng tròn có sàn xanh, đi thẳng và cúi chui qua đường ống để ra khu ngoài trời.
+
+1. Hạ đám **wererat**: kẻ địch cấp thấp, rất dễ.
+2. Quay về nói chuyện với chủ cửa hàng.
+3. Trở lại chỗ đường ống: lúc này có **3 doomrat** xuất hiện, hơi khỏe hơn nhưng vẫn dễ ở giai đoạn này.
+4. Hạ xong, về báo với chủ cửa hàng (game cho chọn tự động quay về). Ông tặng 5 Hi-Potion, hồi đầy HP/MP và giảm giá một số món.
+
+:::reward Manuscript: The Art of Swordplay Vol. V
+Chỉ có khi chơi Hard Mode.
+:::
+
+:::hard
+Phần thưởng Manuscript của nhiệm vụ này (và On the Prowl) chỉ xuất hiện ở Hard Mode.
+:::
+
+## Side Quest: On the Prowl
+:::quest Wymer · Residential Area
+- Mở khóa: hoàn thành **Rat Problem**.
+- Thưởng: **Elixir**, hồi HP/MP, **Manuscript: Way of the Fist Vol. IV** (chỉ ở Hard Mode).
+:::
+
+Wymer nhờ bạn xử lý một con chó quân sự Shinra đang lang thang.
+
+1. **Scrap Boulevard** nằm trên lối nhỏ bên phải Wymer. Con **Wrath Hound** đứng ở cuối khu (vị trí cố định). Nó khỏe hơn quái thường, nhưng vài phát Blizzard là Stagger. Khi còn khoảng 70% máu nó bỏ chạy, không tránh được.
+2. Chạy theo nó ra phía cổng vào Scrap Boulevard, Wymer sẽ gọi bạn lại: con chó chạy vào một lối mới vừa mở. Cúi chui qua cổng dán băng vàng.
+3. Đánh nó lần hai ở cuối lối nhỏ. Máu gần như hồi đầy, nhưng cách đánh y hệt: yếu băng, dùng Blizzard. Khi Stagger, đổi sang Cloud và bấm {△} để vào Punisher Mode, sát thương lớn hơn.
+4. Về nói chuyện với Wymer, anh đứng ngay ngoài cổng Scrap Boulevard.
+
+:::boss Wrath Hound
+weak: Ice
+Bỏ chạy ở khoảng 70% máu, buộc phải đánh hai lần. Stagger bằng Blizzard rồi dồn Punisher Mode.
+:::
+
+:::reward Elixir
+Wymer tặng khi xong.
+:::
+
+## Side Quest: Chadley's Report
+:::quest Chadley · Residential Area
+- Mở khóa: sau khi nói chuyện với Chadley lần đầu ở "Problem Solving".
+- Thưởng: **500 Gil** và mở thêm 3 cấp Battle Intel.
+:::
+
+Chadley đưa bạn **Assess**, tương tự Scan của game gốc. Công cụ Combat Analyzer tự vào kho đồ như vật phẩm cốt truyện, không cần gắn vào đâu.
+
+Việc cần làm: dùng Assess lên **2 loại kẻ địch khác nhau**. Chỗ tiện nhất là **Scrap Boulevard**, nơi vừa có Wererat vừa có Gorger và quái hồi sinh vô hạn, không cần chờ quái từ nhiệm vụ khác. Đánh để có 1 vạch ATB, bấm {✕} mở menu lệnh, chọn Abilities rồi Assess (tốn 1 ATB), làm với hai con khác loại.
+
+Xong thì tự đi bộ về gặp Chadley (không có nút quay về tự động): nhận 500 Gil và 3 cấp Battle Intel tiếp theo được mở.
+
+## Side Quest: Nuisance in the Factory
+:::quest Junk Dealer · Residential Area
+- Mở khóa: sau khi nói chuyện với Chadley lần đầu ở "Problem Solving".
+- Thưởng: **500 Gil**, hồi HP/MP. Hoàn thành sẽ mở **Just Flew In from the Graveyard**.
+:::
+
+Người buôn phế liệu nhờ dọn lũ drake trong nhà máy bỏ hoang.
+
+1. Đi về phía đông của người buôn phế liệu, tới khu **Pillar Plaza** (đoạn dẫn ra nhà ga) và nói chuyện với **Narjin** đứng trước hàng rào.
+2. Vào **Abandoned Talagger Factory**, hạ hai nhóm drake: khu phía bắc có một nhóm, khu phía nam có thêm một nhóm. Chúng yếu **Wind**: dùng **Aero** (phần thưởng từ Battle Intel #2 của Chadley) để Stagger, khi rơi xuống đất thì bị đánh thoải mái. Bấm {□} để nhảy lên đánh chúng giữa không trung.
+3. Quay về người buôn phế liệu (chọn quay về tự động hoặc đi bộ) để nhận thưởng.
+
+:::tip Aero
+Nếu chưa có Aero, hãy xong Battle Intel #2 của Chadley trước.
+:::
+
+## Side Quest: Just Flew In from the Graveyard
+:::quest Gwen · Pillar Plaza
+- Mở khóa: hoàn thành **Nuisance in the Factory**.
+- Thưởng: **Star Bangle**, hồi HP/MP.
+:::
+
+Neighborhood Watch cần ai đó xử lý **Cerulean Drake** trong nhà máy. Cửa vào cần **Watch Security Key** nằm trong một thùng gỗ gần đó.
+
+1. **Tìm chìa khóa:** quay lại Abandoned Talagger Factory. Trong đại sảnh có hai Gorger, đừng lên cầu thang mà đi tới đầu xa của phòng, giữ {△} để mở cửa cuốn. Phía sau là mấy cái thùng, chém bằng {□} sẽ rơi ra Watch Security Key. Tifa sẽ hỏi "Đó là chìa khóa phải không?".
+2. **Mở cửa:** đi về phía đông, vào căn phòng bạn đã hạ nhóm drake ở nhiệm vụ trước, tương tác bảng điều khiển màu xanh để mở cửa khóa.
+3. Phía sau là **Cerulean Drake**, mini-boss.
+4. Xong, game hiện lời nhắc quay về Gwen ngay. Cô tặng Star Bangle và hồi đầy HP/MP.
+
+:::boss Cerulean Drake
+weak: Wind
+Dùng Aero và các đòn mạnh nhất để Stagger. Hãy luân phiên Cloud và Tifa để tung phép liên tiếp, làm đầy thanh Stagger nhanh. Cạn máu thì Cure hoặc Potion.
+:::
+
+:::reward Star Bangle
+Giáp, thưởng từ Gwen.
 :::
 
 ## A Job Well Done

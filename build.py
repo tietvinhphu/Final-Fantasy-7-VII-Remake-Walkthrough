@@ -30,7 +30,13 @@ Xem thử:  python3 -m http.server 8765
     Chiến thuật...
     :::
 
-    Loại khối khác:  pickup (cầu Materia...), tip, warn, hard (mẹo Hard Mode).
+    Loại khối khác:  pickup (cầu Materia...), tip, warn, hard (mẹo Hard Mode),
+                     reward (phần thưởng, vào bảng tổng hợp vật phẩm).
+
+    Nhiệm vụ phụ: bước có tiêu đề "## Side Quest: Tên nhiệm vụ", mở đầu bằng khối
+    :::quest Người giao · Địa điểm (danh sách: Mở khóa / Thưởng). Được đánh số S1, S2...
+    và không tính vào tiến độ cốt truyện. Danh sách đánh số "1. ..." (kèm mục con thụt
+    lề "   - ...") được hỗ trợ.
 
 Hình ảnh lấy từ images/manifest.json theo tên mục tiêu (không ghi trong .md).
 """
@@ -59,9 +65,10 @@ BLOCKS = {
     "tip": ("Mẹo", "✦"),
     "warn": ("Lưu ý", "!"),
     "hard": ("Hard Mode", "▲"),
+    "quest": ("Nhiệm vụ phụ", "◇"),
+    "reward": ("Thưởng", "★"),
 }
 UPCOMING = [
-    ("Nhiệm vụ phụ", "26 nhiệm vụ, gộp vào đúng chương"),
     ("Sưu tầm và trang bị", "Materia, Armor, Accessory, Summon, Music Disc..."),
     ("Boss và hệ thống chiến đấu", "Tất cả boss, Stagger, Hard Mode, Fort Condor"),
     ("DLC Yuffie (INTERmission)", "2 chương, sưu tầm, boss Weiss"),
@@ -128,7 +135,7 @@ def render_blocks(lines, stats):
                 weak = [w.strip() for w in body.pop(0)[5:].split(",") if w.strip()]
                 chips = '<p class="weak"><span>Yếu</span>' + "".join(f"<b>{html.escape(w)}</b>" for w in weak) + "</p>"
             label, icon = BLOCKS[kind]
-            if kind in ("chest", "pickup"):
+            if kind in ("chest", "pickup", "reward"):
                 stats.append((kind, title))
             out.append(
                 f'<aside class="blk blk-{kind}"><div class="blk-head"><span class="blk-ico" aria-hidden="true">{icon}</span>'
@@ -149,8 +156,22 @@ def render_blocks(lines, stats):
                 i += 1
             out.append("<ul>" + "".join(f"<li>{inline(it)}</li>" for it in items) + "</ul>")
             continue
+        if re.match(r"\d+\. ", ln):
+            items = []
+            while i < len(lines) and re.match(r"\d+\. ", lines[i]):
+                text = re.sub(r"^\d+\. ", "", lines[i]).strip()
+                i += 1
+                subs = []
+                while i < len(lines) and re.match(r"\s+[-*] ", lines[i]):
+                    subs.append(lines[i].strip()[2:].strip())
+                    i += 1
+                items.append((text, subs))
+            out.append("<ol>" + "".join(
+                f"<li>{inline(t)}" + ("<ul>" + "".join(f"<li>{inline(x)}</li>" for x in subs) + "</ul>" if subs else "") + "</li>"
+                for t, subs in items) + "</ol>")
+            continue
         para = []
-        while i < len(lines) and lines[i].strip() and not re.match(r"(:::|>|[-*] )", lines[i]):
+        while i < len(lines) and lines[i].strip() and not re.match(r"(:::|>|[-*] |\d+\. )", lines[i]):
             para.append(lines[i].strip())
             i += 1
         out.append("<p>" + " ".join(inline(p) for p in para) + "</p>")
@@ -186,19 +207,26 @@ def parse_chapter(path, manifest):
     key = f"ff7r-vi-ch{num:02d}"
     imgs = {norm(s["section"]): s["files"] for s in manifest.get(f"{num:02d}", [])}
     parts = re.split(r"^## ", md, flags=re.M)
-    stats, used = [], set()
+    stats, used, n_main, n_side = [], set(), 0, 0
     lead = render_blocks(parts[0].splitlines(), stats)
     lead_gal = gallery(imgs.get("intro", []), "Mở đầu chương")
     steps = []
-    for idx, sec in enumerate(parts[1:], 1):
+    for sec in parts[1:]:
         title, _, body = sec.partition("\n")
         title = title.strip()
         sid = slugify(title, used)
         sstats = []
         content = render_blocks(body.splitlines(), sstats)
         stats.extend(sstats)
-        steps.append(dict(id=sid, title=title, html=content, gal=gallery(imgs.get(norm(title), []), title),
-                          boss=title.lower().startswith("boss"), n=idx))
+        side = title.lower().startswith("side quest")
+        if side:
+            n_side += 1
+            label, node, name = f"S{n_side}", f"S{n_side}", title.split(":", 1)[1].strip()
+        else:
+            n_main += 1
+            label, node, name = f"{n_main:02d}", str(n_main), title
+        steps.append(dict(id=sid, title=title, name=name, html=content, gal=gallery(imgs.get(norm(title), []), title),
+                          boss=title.lower().startswith("boss"), side=side, label=label, node=node))
     art = next((f for s in manifest.get(f"{num:02d}", []) for f in s["files"]), "")
     if meta.get("hero"):  # chọn ảnh hero khác khi ảnh đầu là màn hình thông tin rối mắt
         art = f"images/ch{num:02d}/{int(meta['hero']):02d}.jpg"
@@ -206,7 +234,7 @@ def parse_chapter(path, manifest):
     return dict(num=num, key=key, file=f"chapter-{num:02d}.html", art=art, boss_art=boss_art, title=meta.get("title", path.stem),
                 area=meta.get("area", ""), summary=meta.get("summary", ""),
                 source=meta.get("source", ORIGIN), lead=lead, lead_gal=lead_gal,
-                steps=steps, loot=stats, n_img=sum(len(v) for v in imgs.values()),
+                steps=steps, n_main=n_main, n_side=n_side, loot=stats, n_img=sum(len(v) for v in imgs.values()),
                 n_chest=sum(1 for k, _ in stats if k == "chest"))
 
 
@@ -273,16 +301,20 @@ def chapter_page(c, chapters):
     idx = chapters.index(c)
     prev_c = chapters[idx - 1] if idx else None
     next_c = chapters[idx + 1] if idx + 1 < len(chapters) else None
-    total = len(c["steps"])
-    toc = "".join(f'<li><a href="#{s["id"]}"><span>{s["n"]:02d}</span>{html.escape(s["title"])}</a></li>' for s in c["steps"])
+    total, n_side = c["n_main"], c["n_side"]
+    toc = "".join(f'<li{" class=side" if s["side"] else ""}><a href="#{s["id"]}"><span>{s["label"]}</span>{html.escape(s["name"])}</a></li>'
+                  for s in c["steps"])
     steps = []
     for s in c["steps"]:
-        cls = "step boss" if s["boss"] else "step"
+        cls = "step side" if s["side"] else "step boss" if s["boss"] else "step"
+        title_html = (f'<div class="ch-title"><span class="tag">Nhiệm vụ phụ</span><h2>{html.escape(s["name"])}</h2></div>'
+                if s["side"] else f'<h2>{html.escape(s["name"])}</h2>')
+        side_attr = " data-side=1" if s["side"] else ""
         steps.append(
             f'<li class="{cls}" id="{s["id"]}" data-step="{s["id"]}">'
-            f'<span class="node" aria-hidden="true">{s["n"]}</span>'
-            f'<div class="card"><div class="card-head"><h2>{html.escape(s["title"])}</h2>'
-            f'<label class="done"><input type="checkbox" data-step-box="{s["id"]}"><span>Xong</span></label></div>'
+            f'<span class="node" aria-hidden="true">{s["node"]}</span>'
+            f'<div class="card"><div class="card-head">{title_html}'
+            f'<label class="done"><input type="checkbox" data-step-box="{s["id"]}"{side_attr}><span>Xong</span></label></div>'
             f'<div class="card-body">{s["html"]}{s["gal"]}</div></div></li>')
     loot = ""
     if c["loot"]:
@@ -292,21 +324,23 @@ def chapter_page(c, chapters):
         loot = (f'<details class="loot"><summary>Tổng hợp vật phẩm trong chương <span>{len(c["loot"])}</span></summary>'
                 f'<ul>{rows}</ul></details>')
     chips = (f'<span class="chip">{total} bước</span><span class="chip">{c["n_chest"]} rương</span>'
-             f'<span class="chip">{c["n_img"]} hình</span>')
+             + (f'<span class="chip">{n_side} nhiệm vụ phụ</span>' if n_side else "")
+             + f'<span class="chip">{c["n_img"]} hình</span>')
+    side_meter = (f'<p class="meter-label"><span id="side-text">0/{n_side}</span> nhiệm vụ phụ đã xong</p>' if n_side else "")
     pager = '<nav class="pager" aria-label="Chuyển chương">'
     pager += (f'<a href="{prev_c["file"]}"><small>Chương trước</small>← {html.escape(prev_c["title"])}</a>' if prev_c else "")
     pager += (f'<a class="fwd" href="{next_c["file"]}"><small>Chương sau</small>{html.escape(next_c["title"])} →</a>' if next_c else "")
     pager += "</nav>"
     area = " · " + html.escape(c["area"]) if c["area"] else ""
     return (head(f'Chương {c["num"]}: {c["title"]} · FF7 Remake', c["summary"]) +
-            f'<body data-chapter="{c["key"]}" data-total="{total}">\n' + topbar(chapters, c["num"]) +
+            f'<body data-chapter="{c["key"]}" data-total="{total}" data-side-total="{n_side}">\n' + topbar(chapters, c["num"]) +
             f'<section class="hero">{hero_art(c["art"])}<div class="hero-in">'
             f'<p class="eyebrow">Chương {c["num"]:02d}{area}</p>'
             f'<h1>{html.escape(c["title"])}</h1>'
             f'<p class="sub">{html.escape(c["summary"])}</p>'
             f'<div class="chips">{chips}</div>'
             f'<div class="meter" role="progressbar" aria-label="Tiến độ chương" aria-valuemin="0" aria-valuemax="{total}" aria-valuenow="0">'
-            f'<i></i></div><p class="meter-label"><span id="meter-text">0/{total}</span> bước đã xong</p>'
+            f'<i></i></div><p class="meter-label"><span id="meter-text">0/{total}</span> bước đã xong</p>{side_meter}'
             f'</div></section>\n' + credit(c["source"]) +
             f'<div class="layout"><nav class="toc" aria-label="Mục lục chương"><p class="toc-title">Trong chương này</p><ol>{toc}</ol></nav>\n'
             f'<main id="main" tabindex="-1">\n<div class="lead">{c["lead"]}{c["lead_gal"]}</div>\n{loot}\n'
@@ -315,13 +349,14 @@ def chapter_page(c, chapters):
 
 def index_page(chapters):
     cards = "".join(
-        f'<li class="reveal"><a class="ccard" href="{c["file"]}" data-chapter="{c["key"]}" data-total="{len(c["steps"])}">'
+        f'<li class="reveal"><a class="ccard" href="{c["file"]}" data-chapter="{c["key"]}" data-total="{c["n_main"]}">'
         f'<span class="cnum">{c["num"]:02d}</span><span class="cbody"><strong>{html.escape(c["title"])}</strong>'
         f'<small>{html.escape(c["area"])}</small></span>'
         f'<span class="ring" aria-label="Tiến độ"><b></b></span></a></li>' for i, c in enumerate(chapters))
     soon = "".join(f'<li class="reveal"><div class="ccard soon"><span class="cbody"><strong>{html.escape(t)}</strong><small>{html.escape(d)}</small></span>'
                    f'<span class="tag">Sắp có</span></div></li>' for t, d in UPCOMING)
-    n_steps = sum(len(c["steps"]) for c in chapters)
+    n_steps = sum(c["n_main"] for c in chapters)
+    n_quests = sum(c["n_side"] for c in chapters)
     home_art = next((c["art"] for c in chapters if c["num"] == HOME_HERO_CHAPTER), chapters[0]["art"])
     return (head(SITE_TITLE) + '<body class="home">\n' + topbar(chapters) +
             f'<section class="hero hero-home">{hero_art(home_art)}<div class="hero-in"><p class="eyebrow">Hướng dẫn tiếng Việt · không chính thức</p>'
@@ -329,6 +364,7 @@ def index_page(chapters):
             f'<p class="sub">Lộ trình từng chương, rương, boss và mẹo, gom thành một trang để tra nhanh khi đang chơi. '
             f'Tiến độ lưu ngay trong trình duyệt của bạn.</p>'
             f'<div class="chips"><span class="chip">{len(chapters)} chương</span><span class="chip">{n_steps} bước</span>'
+            f'<span class="chip">{n_quests} nhiệm vụ phụ</span>'
             f'<span class="chip">{sum(c["n_img"] for c in chapters)} hình</span></div>'
             f'<a class="cta" href="{chapters[0]["file"]}">Bắt đầu từ Chương 1</a></div></section>\n' + credit(ORIGIN) +
             f'<main id="main" tabindex="-1" class="home-main"><h2 class="h-sec">Cốt truyện</h2><ol class="grid">{cards}</ol>'
@@ -347,7 +383,7 @@ def main():
     for c in chapters:
         (OUT / c["file"]).write_text(chapter_page(c, chapters), encoding="utf-8")
     (OUT / "index.html").write_text(index_page(chapters), encoding="utf-8")
-    print(f"Đã dựng {len(chapters)} chương, {sum(len(c['steps']) for c in chapters)} bước, {sum(c['n_img'] for c in chapters)} hình")
+    print(f"Đã dựng {len(chapters)} chương, {sum(c['n_main'] for c in chapters)} bước, {sum(c['n_side'] for c in chapters)} nhiệm vụ phụ, {sum(c['n_img'] for c in chapters)} hình")
 
 
 if __name__ == "__main__":

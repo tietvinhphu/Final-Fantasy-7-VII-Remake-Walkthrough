@@ -6,7 +6,7 @@ summary: Gặp lại Aerith, đấu Reno và Rude, dạo quanh khu ổ chuột S
 source: https://www.powerpyx.com/final-fantasy-7-vii-remake-chapter-8-budding-bodyguard-walkthrough/
 hero: 4
 ---
-Một chương lớn gần như mở: sau khi cứu lũ trẻ bạn có 6 nhiệm vụ phụ chỉ làm được ở đây, cùng nhiều rương và Music Disc rải khắp thị trấn. Hai trận đấu tay đôi với **Reno** và **Rude** cần chiến thuật khác nhau.
+Một chương lớn gần như mở: sau khi cứu lũ trẻ bạn có 6 nhiệm vụ phụ làm được ở đây (hướng dẫn chi tiết ngay dưới bước "Requests for the Mercenary"), cùng nhiều rương và Music Disc rải khắp thị trấn. Hai trận đấu tay đôi với **Reno** và **Rude** cần chiến thuật khác nhau.
 
 ## Second Chance Meeting
 Sau cắt cảnh mở đầu, nói chuyện với Aerith. Một nhóm người vào nhà thờ và bạn phải hạ các đợt Security Officer.
@@ -173,6 +173,137 @@ Nên gắn **Wind Materia** cho cả Cloud và Aerith vì boss sắp tới yếu
 :::
 
 Trên đường bạn gặp tên Turk đầu trọc đã thấy trước đó, tên **Rude**. Bạn vào đấu trường gần đó cho trận boss thứ hai của chương.
+
+## Side Quest: The Mysterious Moogle Merchant
+:::quest Moggie · Children's Secret Hideout, Sector 5 Slums
+- Mở khóa: xong bước "Escort the Children".
+- Thưởng: **Moogle Membership Card**, hồi đầy HP và MP.
+:::
+
+Moggie là fan cuồng Moogle, sẵn sàng đổi đồ lấy **Moogle Medal**. Vừa nói chuyện, bạn vào thẳng màn hình cửa hàng và mua **Moogle Membership Card** bằng 1 Moogle Medal (bạn đã gom cả đống khi đập thùng suốt cốt truyện). Mua xong là hết nhiệm vụ.
+
+:::tip Mua luôn Graveyard Key
+Đã ở đây thì mua thêm **Graveyard Key** bằng 1 Moogle Medal. Bạn cần nó cho nhiệm vụ **Paying Respects**, mua trước đỡ phải đi vòng lại.
+:::
+
+## Side Quest: Weapons on a Rampage
+:::quest Scared Man · Station Way, Sector 5 Slums
+- Mở khóa: xong bước "Escort the Children".
+- Thưởng: **Protective Boots**, hồi HP/MP, **Manuscript: Telluric Scriptures Vol. V** (chỉ ở Hard Mode).
+:::
+
+Người đàn ông hoảng sợ nói bị năm bộ giáp Shinra lỗi tấn công trong ngõ sau bãi phế liệu. Nhiệm vụ bảo tìm mọi ngóc ngách, nhưng thực ra chúng ở chỗ dễ thấy, chia hai nhóm 3 và 2 con, nên bạn chỉ đánh hai trận. Đi lên bãi phế liệu phía bắc, nơi bạn lần đầu vào Sector 5 Slums.
+
+:::boss Mark II Monodrive
+weak: Wind
+Rất kháng sát thương vật lý, khi giơ khiên thì chặn hoàn toàn đòn vật lý. Gắn Materia phép tấn công cho Cloud (đặc biệt **Aero**) và dùng phép của Aerith như **Tempest**.
+:::
+
+Về gặp người đàn ông, lúc này ông đứng ở Center District gần cửa hàng vật phẩm. Ông tặng **Protective Boots** và hồi đầy HP/MP.
+
+:::reward Protective Boots
+Phụ kiện, thưởng khi xong nhiệm vụ.
+:::
+
+:::reward Manuscript: Telluric Scriptures Vol. V
+Chỉ có khi chơi Hard Mode.
+:::
+
+## Side Quest: Paying Respects
+:::quest Old Man · Center District, Sector 5 Slums
+- Mở khóa: hoàn thành **Weapons on a Rampage**.
+- Thưởng: **Studded Bracer**, hồi HP/MP, **Manuscript: Telluric Scriptures Vol. VIII** (chỉ ở Hard Mode).
+:::
+
+Một đàn quái trong nghĩa trang làm ông cụ không thể thăm mộ vợ. Bạn cần chìa khóa nghĩa trang trước.
+
+1. **Graveyard Key:** mua bằng 1 Moogle Medal từ Moggie ở Children's Secret Hideout (xem nhiệm vụ trên). Mua rồi thì bỏ qua bước này.
+2. Đến **Slum Public Cemetery** ở khu Nuts n' Bolts Hills, hạ **3 con Venomantis**. Đây có lẽ là quái thường đánh đau nhất bạn gặp từ đầu game, còn gây nhiều trạng thái như Poison. Gắn phép băng mạnh nhất để Stagger nhanh, rồi dồn đòn mạnh của Cloud như Triple Slash. Aerith lo hồi máu và buff phòng thủ (Barrier hợp ở đây). Guard và lăn né thường xuyên, hễ rảnh là Cure.
+3. Hạ xong có đoạn cắt cảnh ngắn ở nghĩa trang, game cho chọn quay về chỗ ông cụ ngay. Nhận **Studded Bracer** (giáp) và hồi đầy HP/MP.
+
+:::boss Venomantis
+weak: Ice
+Đòn rất mạnh, hay gây Poison. Stagger bằng Blizzard rồi Triple Slash; dùng Barrier và Guard.
+:::
+
+:::reward Studded Bracer
+Giáp, thưởng từ ông cụ.
+:::
+
+:::reward Manuscript: Telluric Scriptures Vol. VIII
+Chỉ có khi chơi Hard Mode.
+:::
+
+## Side Quest: Kids on Patrol
+:::quest Ms. Folia · Center District, Sector 5 Slums
+- Mở khóa: xong bước "Escort the Children".
+- Thưởng: **Nail Bat** (vũ khí Cloud), hồi HP/MP, **Manuscript: Telluric Scriptures Vol. VI** (chỉ ở Hard Mode).
+:::
+
+Cô Folia nhờ bạn đưa những đứa trẻ còn đi tuần về. Mỗi đứa đeo một thanh Buster Sword gỗ trên lưng. Bấm {△} để gửi chúng về trại mồ côi. Cô cho 5 gợi ý, hỏi lại được nhiều lần.
+
+- **Bé trai 1** (gợi ý "đứng gần mấy ống bê tông"): giữa hai ống bê tông ở góc tây nam Center District, ngay quanh góc từ bé gái số 4.
+- **Bé gái 2** ("tuần ở nơi đông người"): cạnh đám đông ở cửa hàng vật phẩm, chỗ Chadley đứng.
+- **Bé trai 3** ("hay ngó cửa hàng"): ngay trước cửa hàng vũ khí, rất gần bé gái số 2.
+- **Bé gái 4** ("thích được mọi người ở trung tâm cộng đồng cưng"): lên con đường phía trên trại mồ côi, đứng trước bà cụ ngồi ghế dài, bên ngoài phòng có jukebox chứa "Tango of Tears".
+- **Bé trai 5** ("canh cổng thị trấn"): đứng ngay cổng thị trấn nhìn từ Center District ra Station Way.
+
+Đủ 5 bé thì về báo cô Folia. Bọn trẻ kể có con quái bí ẩn **Toad King** xuất hiện gần chỗ trốn. Đến Children's Secret Hideout, đi tới cuối khu (nơi bạn đã giải cứu trẻ ở cốt truyện).
+
+:::boss Hedgehog Pie King
+weak: Ice
+Đi kèm hai Hedgehog Pie thường. Nó nhiều máu hơn, và buff cho đàn em, nên hạ đàn em trước rồi tập trung vào nó. Blizzard làm cả nó và Hedgehog Pie Stagger rất nhanh, sau đó dồn đòn vật lý.
+:::
+
+Xong thì về Leaf House (lần này quay về tự động được), bọn trẻ tặng **Nail Bat**.
+
+:::reward Nail Bat
+Vũ khí mới cho Cloud.
+:::
+
+:::reward Manuscript: Telluric Scriptures Vol. VI
+Chỉ có khi chơi Hard Mode.
+:::
+
+## Side Quest: A Verified Hero
+:::quest Sarah · Children's Secret Hideout, Center District
+- Mở khóa: xong **Kids on Patrol**.
+- Thưởng theo điểm: **Moogle Medal** (chỉ chơi), **Elixir** (10.000), **Crescent Moon Charm** (20.000), **Spectral Cogwheel** (30.000, kèm trophy Crate Annihilator).
+:::
+
+Bọn trẻ cho Cloud chơi **Whack-A-Box**, trò yêu thích ở chỗ trốn. Bạn cần **ít nhất 10.000 điểm** để xong nhiệm vụ.
+
+Bạn có 1 phút 30 giây chạy khắp khu và phá hộp bằng {□} hoặc kỹ năng vũ khí. Hộp càng to điểm càng cao nhưng đập càng lâu:
+- **Hộp vàng:** chỉ có điểm.
+- **Hộp xanh:** điểm và ATB.
+- **Hộp đỏ có biểu tượng đồng hồ:** cộng 10 giây, ưu tiên lấy trước.
+
+Cách làm tốt: gắn **Iron Blade** để có **Triple Slash**. Hai lần Triple Slash là phá được hộp xanh lớn 1.500 điểm chắn đường. Hộp to chỉ đập khi nó chắn lối, còn lại tập trung hộp nhỏ và hộp đỏ.
+
+:::reward Spectral Cogwheel
+Cần 30.000 điểm trở lên. Kèm trophy Crate Annihilator.
+:::
+
+## Side Quest: The Angel of the Slums
+:::quest Damon · Center District, Sector 5 Slums
+- Mở khóa: xong **Kids on Patrol**, rồi quay lại Children's Secret Hideout để Oates tìm bạn và đánh dấu nhiệm vụ ở trung tâm cộng đồng.
+- Thưởng: **2.000 Gil**, hồi HP/MP, **Manuscript: Telluric Scriptures Vol. VII** (chỉ ở Hard Mode).
+:::
+
+Một phóng viên muốn tìm hiểu về "Thiên thần khu ổ chuột". Vào trung tâm cộng đồng (tòa nhà cạnh Damon). Chỉ cần nói chuyện với **Mireille**, cô đứng ở lối vào trong trang phục nhà thám hiểm (không thấy thì hỏi các cụ già, họ chỉ cho). Xong thì sang nói với Damon.
+
+Tiếp tục đến **Lookout Point** ở góc đông bắc Sector 5 Slums, nơi bạn đánh **Chromogger**.
+
+:::boss Chromogger
+weak: Lightning
+Nhiều máu, đòn diện rộng, nhưng chậm. Gắn Lightning Materia cho cả Cloud và Aerith. Lăn né phần lớn đòn. Đánh vào **Iron Sphere** (quả cầu phá nhà trên tay nó) bằng phép Lightning mạnh nhất để Stagger, rồi đổi sang đòn vật lý (Punisher Mode) vào thân. Chỉ 2 đến 3 lượt là đổ. Đánh thân không làm nó Stagger, phải đánh quả cầu. Khi nó phun sương diện rộng xuống đất thì chạy ra xa.
+:::
+
+Hạ xong, ra chiếc bàn ở khu đó nhặt **calling card** bằng {△}. Quay về Damon (tự động được), sau đoạn cắt cảnh, Mireille trả 2.000 Gil.
+
+:::reward Manuscript: Telluric Scriptures Vol. VII
+Chỉ có khi chơi Hard Mode.
+:::
 
 ## Boss Fight: Rude
 :::boss Rude
