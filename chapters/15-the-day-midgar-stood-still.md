@@ -4,6 +4,7 @@ title: The Day Midgar Stood Still
 area: Collapsed Sector 7 Plate
 summary: Leo qua tàn tích tấm đĩa Sector 7 bằng móc câu, đối đầu lính SOLDIER hạng ba và drone Valkyrie ở chặng cuối.
 source: https://www.powerpyx.com/final-fantasy-7-vii-remake-chapter-15-the-day-midgar-stood-still-walkthrough/
+hero: 2
 ---
 Chương giới thiệu **móc câu** để leo trèo và các loại lính Shinra mới (3-C SOLDIER Operator, Shock-Ray, Blast-Ray). Boss cuối là **The Valkyrie**, một trận ba giai đoạn có cơ chế khiên và tia laser cần canh nhịp.
 

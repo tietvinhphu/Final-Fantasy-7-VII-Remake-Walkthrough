@@ -4,6 +4,7 @@ title: Rough Waters
 area: Sector 6 Sewers
 summary: Rơi xuống cống Sector 6, hạ boss Abzu ngay đầu chương rồi men theo hệ thống cống tới mặt đất, vận hành máy bơm để mở đường.
 source: https://www.powerpyx.com/final-fantasy-7-vii-remake-chapter-10-rough-waters-walkthrough/
+hero: 2
 ---
 Chương ngắn và dễ sau Hell House. Boss **Abzu** nằm ngay **đầu** chương, nên bạn có cả hành trình cống để hồi MP. Sau đó không còn boss nào, bạn có thể bỏ chạy khỏi các trận thường.
 

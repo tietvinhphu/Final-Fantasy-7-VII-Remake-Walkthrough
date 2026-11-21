@@ -46,36 +46,61 @@
         items.forEach(function (el) { io.observe(el); });
     }
 
+    // Giữ mục đang chọn trong vùng nhìn thấy của TOC (cuộn ngang trên điện thoại, dọc trên máy tính).
+    function keepVisible(box, el) {
+        var b = box.getBoundingClientRect(), r = el.getBoundingClientRect();
+        if (box.scrollWidth > box.clientWidth + 1) {
+            box.scrollLeft += (r.left - b.left) - (b.width - r.width) / 2;
+        } else if (box.scrollHeight > box.clientHeight + 1) {
+            if (r.top < b.top || r.bottom > b.bottom) box.scrollTop += (r.top - b.top) - (b.height - r.height) / 2;
+        }
+    }
+
     function initScroll() {
         var bar = document.querySelector('.scrollbar');
+        var topbar = document.querySelector('.bar');
         var timeline = document.querySelector('.timeline');
         var steps = Array.prototype.slice.call(document.querySelectorAll('.step'));
+        var toc = document.querySelector('.toc');
+        var tocList = toc && toc.querySelector('ol');
         var tocLinks = {};
         document.querySelectorAll('.toc a').forEach(function (a) { tocLinks[a.getAttribute('href').slice(1)] = a; });
-        var ticking = false;
+        var ticking = false, lastId = null;
+
+        function measureBar() { if (topbar) root.style.setProperty('--bar-h', topbar.offsetHeight + 'px'); }
 
         function update() {
             ticking = false;
+            // Đọc hết layout trước, ghi style sau: tránh buộc trình duyệt tính lại bố cục mỗi khung hình.
             var h = root.scrollHeight - window.innerHeight;
-            if (bar) bar.style.setProperty('--scroll', h > 0 ? Math.min(1, window.scrollY / h).toFixed(4) : 0);
-            if (!timeline) return;
+            var scrolled = h > 0 ? Math.min(1, window.scrollY / h) : 0;
             var anchor = window.innerHeight * 0.4;
-            var top = timeline.getBoundingClientRect().top;
-            var fill = Math.max(0, Math.min(timeline.offsetHeight, anchor - top));
-            timeline.style.setProperty('--fill', fill + 'px');
-            var current = null;
-            steps.forEach(function (s) {
-                var r = s.getBoundingClientRect();
-                if (r.top <= anchor && r.bottom > anchor) current = s;
-                s.classList.toggle('active', s === current);
-            });
-            Object.keys(tocLinks).forEach(function (id) {
-                tocLinks[id].classList.toggle('on', !!current && current.id === id);
-            });
+            var fillRatio = 0, current = null;
+            if (timeline) {
+                var top = timeline.getBoundingClientRect().top;
+                var total = timeline.offsetHeight;
+                fillRatio = total ? Math.max(0, Math.min(1, (anchor - top) / total)) : 0;
+                steps.forEach(function (s) {
+                    var r = s.getBoundingClientRect();
+                    if (r.top <= anchor && r.bottom > anchor) current = s;
+                });
+            }
+            if (bar) bar.style.setProperty('--scroll', scrolled.toFixed(4));
+            if (!timeline) return;
+            timeline.style.setProperty('--fillr', fillRatio.toFixed(4));
+            steps.forEach(function (s) { s.classList.toggle('active', s === current); });
+            var id = current ? current.id : null;
+            Object.keys(tocLinks).forEach(function (k) { tocLinks[k].classList.toggle('on', k === id); });
+            if (id !== lastId) {
+                lastId = id;
+                // Điện thoại: dải pill cuộn ngang trong <ol>; máy tính: cả cột TOC cuộn dọc.
+                if (id && toc) keepVisible(tocList.scrollWidth > tocList.clientWidth + 1 ? tocList : toc, tocLinks[id]);
+            }
         }
         function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
         window.addEventListener('scroll', onScroll, { passive: true });
-        window.addEventListener('resize', onScroll);
+        window.addEventListener('resize', function () { measureBar(); onScroll(); });
+        measureBar();
         update();
     }
 
@@ -135,7 +160,7 @@
         function show(i) {
             idx = (i + shots.length) % shots.length;
             img.src = shots[idx].getAttribute('href');
-            img.alt = 'Hình ' + (idx + 1) + '/' + shots.length;
+            img.alt = (shots[idx].getAttribute('data-cap') || 'Hình minh họa') + ', hình ' + (idx + 1) + ' trên ' + shots.length;
             cap.textContent = (shots[idx].getAttribute('data-cap') || '') + ' · ' + (idx + 1) + '/' + shots.length;
         }
         shots.forEach(function (a, i) {

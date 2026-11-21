@@ -13,6 +13,7 @@ Xem thử:  python3 -m http.server 8765
     area: Sector 5 Slums
     summary: Một câu tóm tắt chương.
     source: https://www.powerpyx.com/...
+    hero: 4                          <- (tùy chọn) số ảnh làm hero; mặc định ảnh đầu tiên
     ---
     Đoạn dẫn nhập (tùy chọn).
 
@@ -46,6 +47,9 @@ ASSETS = ROOT / "web-assets"
 ORIGIN = "https://www.powerpyx.com/"
 
 SITE_TITLE = "Final Fantasy VII Remake — Hướng dẫn tiếng Việt"
+SITE_DESC = ("Hướng dẫn tiếng Việt không chính thức cho Final Fantasy VII Remake: lộ trình từng chương, "
+             "rương, boss và mẹo Hard Mode, viết lại từ loạt hướng dẫn của PowerPyx.")
+HOME_HERO_CHAPTER = 4  # ảnh hero trang chủ: cảnh không có HUD, lấy từ chương này
 CSP = ("default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; "
        "object-src 'none'; base-uri 'self'; form-action 'none'")
 BLOCKS = {
@@ -153,12 +157,26 @@ def render_blocks(lines, stats):
     return "".join(out)
 
 
+THUMB_W, THUMB_H = 560, 315  # make-thumbs.py: rộng 560px, tỉ lệ 16:9
+
+
+def thumb(f):
+    """Ảnh thu nhỏ images/chNN/t/MM.jpg nếu có (kèm kích thước để không nhảy bố cục)."""
+    p = Path(f)
+    t = p.parent / "t" / p.name
+    if (ROOT / t).exists():
+        return t.as_posix(), f' width="{THUMB_W}" height="{THUMB_H}"'
+    return f, ""
+
+
 def gallery(files, label):
     if not files:
         return ""
-    figs = "".join(
-        f'<a class="shot" href="{f}" data-cap="{html.escape(label)}"><img loading="lazy" decoding="async" '
-        f'src="{f}" alt="Hình minh họa: {html.escape(label)}"></a>' for f in files)
+    figs = ""
+    for f in files:
+        src, dims = thumb(f)
+        figs += (f'<a class="shot" href="{f}" data-cap="{html.escape(label)}"><img loading="lazy" decoding="async" '
+                 f'src="{src}"{dims} alt="Hình minh họa: {html.escape(label)}"></a>')
     return f'<div class="shots" role="group" aria-label="Hình minh họa">{figs}</div>'
 
 
@@ -182,6 +200,8 @@ def parse_chapter(path, manifest):
         steps.append(dict(id=sid, title=title, html=content, gal=gallery(imgs.get(norm(title), []), title),
                           boss=title.lower().startswith("boss"), n=idx))
     art = next((f for s in manifest.get(f"{num:02d}", []) for f in s["files"]), "")
+    if meta.get("hero"):  # chọn ảnh hero khác khi ảnh đầu là màn hình thông tin rối mắt
+        art = f"images/ch{num:02d}/{int(meta['hero']):02d}.jpg"
     boss_art = next((s["files"][0] for s in manifest.get(f"{num:02d}", []) if s["section"].lower().startswith("boss") and s["files"]), art)
     return dict(num=num, key=key, file=f"chapter-{num:02d}.html", art=art, boss_art=boss_art, title=meta.get("title", path.stem),
                 area=meta.get("area", ""), summary=meta.get("summary", ""),
@@ -190,7 +210,7 @@ def parse_chapter(path, manifest):
                 n_chest=sum(1 for k, _ in stats if k == "chest"))
 
 
-def head(title):
+def head(title, desc=""):
     return f"""<!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -200,6 +220,9 @@ def head(title):
 <meta name="robots" content="noindex, nofollow">
 <meta name="referrer" content="no-referrer">
 <meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#071117" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#edf3f6" media="(prefers-color-scheme: light)">
+<meta name="description" content="{html.escape(desc or SITE_DESC, quote=True)}">
 <title>{html.escape(title)}</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%2712%27 fill=%27%2300d9a0%27/%3E%3C/svg%3E">
 <link rel="stylesheet" href="style.css">
@@ -212,7 +235,8 @@ def topbar(chapters, current=None):
     items = "".join(
         f'<li><a href="{c["file"]}"{" aria-current=page" if c["num"] == current else ""}>'
         f'<span class="mi-n">{c["num"]:02d}</span><span>{html.escape(c["title"])}</span></a></li>' for c in chapters)
-    return f"""<header class="bar">
+    return f"""<a class="skip" href="#main">Bỏ qua, tới nội dung</a>
+<header class="bar">
 <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span>FF7 Remake<small> · Hướng dẫn tiếng Việt</small></span></a>
 <div class="bar-tools">
 <details class="menu"><summary class="btn">Chương</summary><ol class="menu-list">{items}</ol></details>
@@ -255,7 +279,7 @@ def chapter_page(c, chapters):
     for s in c["steps"]:
         cls = "step boss" if s["boss"] else "step"
         steps.append(
-            f'<li class="{cls} reveal" id="{s["id"]}" data-step="{s["id"]}">'
+            f'<li class="{cls}" id="{s["id"]}" data-step="{s["id"]}">'
             f'<span class="node" aria-hidden="true">{s["n"]}</span>'
             f'<div class="card"><div class="card-head"><h2>{html.escape(s["title"])}</h2>'
             f'<label class="done"><input type="checkbox" data-step-box="{s["id"]}"><span>Xong</span></label></div>'
@@ -274,7 +298,7 @@ def chapter_page(c, chapters):
     pager += (f'<a class="fwd" href="{next_c["file"]}"><small>Chương sau</small>{html.escape(next_c["title"])} →</a>' if next_c else "")
     pager += "</nav>"
     area = " · " + html.escape(c["area"]) if c["area"] else ""
-    return (head(f'Chương {c["num"]}: {c["title"]} · FF7 Remake') +
+    return (head(f'Chương {c["num"]}: {c["title"]} · FF7 Remake', c["summary"]) +
             f'<body data-chapter="{c["key"]}" data-total="{total}">\n' + topbar(chapters, c["num"]) +
             f'<section class="hero">{hero_art(c["art"])}<div class="hero-in">'
             f'<p class="eyebrow">Chương {c["num"]:02d}{area}</p>'
@@ -285,7 +309,7 @@ def chapter_page(c, chapters):
             f'<i></i></div><p class="meter-label"><span id="meter-text">0/{total}</span> bước đã xong</p>'
             f'</div></section>\n' + credit(c["source"]) +
             f'<div class="layout"><nav class="toc" aria-label="Mục lục chương"><p class="toc-title">Trong chương này</p><ol>{toc}</ol></nav>\n'
-            f'<main>\n<div class="lead">{c["lead"]}{c["lead_gal"]}</div>\n{loot}\n'
+            f'<main id="main" tabindex="-1">\n<div class="lead">{c["lead"]}{c["lead_gal"]}</div>\n{loot}\n'
             f'<ol class="timeline">{"".join(steps)}</ol>\n{pager}\n</main>\n</div>\n' + FOOT + LIGHTBOX + "</body>\n</html>\n")
 
 
@@ -298,15 +322,16 @@ def index_page(chapters):
     soon = "".join(f'<li class="reveal"><div class="ccard soon"><span class="cbody"><strong>{html.escape(t)}</strong><small>{html.escape(d)}</small></span>'
                    f'<span class="tag">Sắp có</span></div></li>' for t, d in UPCOMING)
     n_steps = sum(len(c["steps"]) for c in chapters)
+    home_art = next((c["art"] for c in chapters if c["num"] == HOME_HERO_CHAPTER), chapters[0]["art"])
     return (head(SITE_TITLE) + '<body class="home">\n' + topbar(chapters) +
-            f'<section class="hero hero-home">{hero_art(chapters[0]["boss_art"])}<div class="hero-in"><p class="eyebrow">Hướng dẫn tiếng Việt · không chính thức</p>'
+            f'<section class="hero hero-home">{hero_art(home_art)}<div class="hero-in"><p class="eyebrow">Hướng dẫn tiếng Việt · không chính thức</p>'
             f'<h1>Final Fantasy VII <span>Remake</span></h1>'
             f'<p class="sub">Lộ trình từng chương, rương, boss và mẹo, gom thành một trang để tra nhanh khi đang chơi. '
             f'Tiến độ lưu ngay trong trình duyệt của bạn.</p>'
             f'<div class="chips"><span class="chip">{len(chapters)} chương</span><span class="chip">{n_steps} bước</span>'
             f'<span class="chip">{sum(c["n_img"] for c in chapters)} hình</span></div>'
             f'<a class="cta" href="{chapters[0]["file"]}">Bắt đầu từ Chương 1</a></div></section>\n' + credit(ORIGIN) +
-            f'<main class="home-main"><h2 class="h-sec">Cốt truyện</h2><ol class="grid">{cards}</ol>'
+            f'<main id="main" tabindex="-1" class="home-main"><h2 class="h-sec">Cốt truyện</h2><ol class="grid">{cards}</ol>'
             f'<h2 class="h-sec">Đang chuẩn bị</h2><ol class="grid">{soon}</ol></main>\n' + FOOT + "</body>\n</html>\n")
 
 

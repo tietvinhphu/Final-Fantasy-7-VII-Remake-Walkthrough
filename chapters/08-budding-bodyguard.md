@@ -4,6 +4,7 @@ title: Budding Bodyguard
 area: Sector 5 Slums
 summary: Gặp lại Aerith, đấu Reno và Rude, dạo quanh khu ổ chuột Sector 5 với nhiều nhiệm vụ phụ, rồi cứu lũ trẻ bị kẹt.
 source: https://www.powerpyx.com/final-fantasy-7-vii-remake-chapter-8-budding-bodyguard-walkthrough/
+hero: 4
 ---
 Một chương lớn gần như mở: sau khi cứu lũ trẻ bạn có 6 nhiệm vụ phụ chỉ làm được ở đây, cùng nhiều rương và Music Disc rải khắp thị trấn. Hai trận đấu tay đôi với **Reno** và **Rude** cần chiến thuật khác nhau.
 
