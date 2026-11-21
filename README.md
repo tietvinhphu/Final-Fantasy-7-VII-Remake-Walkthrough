@@ -16,27 +16,56 @@ Hướng dẫn tiếng Việt **không chính thức**, dùng để tra cứu kh
 | Boss và hệ thống chiến đấu (Stagger, Hard Mode, Fort Condor, danh sách kẻ địch) | Chưa làm |
 | DLC Yuffie (INTERmission) | Chưa làm |
 
-## Giao diện
+## Cách đọc
 
-- Timeline từng bước với đường sáng chạy theo thanh cuộn, nút bước bật sáng khi tới.
-- Thẻ **rương** (hổ phách), **vật phẩm nhặt** (tím), **boss** (đỏ, kèm điểm yếu), **mẹo** và **Hard Mode**. Nhiệm vụ phụ là các mục đánh số `S1, S2...` màu tím, có thẻ thông tin người giao, điều kiện mở khóa, phần thưởng; tiến độ của chúng đếm riêng, không tính vào tiến độ cốt truyện.
-- Mỗi bước có ô "Xong" lưu trong trình duyệt, kèm thanh tiến độ chương và vòng tiến độ ở trang chủ.
-- Hình minh họa bấm để xem lớn (lightbox, phím mũi tên và vuốt trên điện thoại). Lưới hiển thị ảnh thu nhỏ, bấm mới tải ảnh gốc.
-- Mục lục dính trên cùng khi cuộn trên điện thoại và tự cuộn tới mục đang đọc; có liên kết "Bỏ qua, tới nội dung" cho người dùng bàn phím.
-- Giao diện sáng/tối (chữ đạt tương phản 4.5:1 ở cả hai), tôn trọng `prefers-reduced-motion`, dùng được trên điện thoại. Hiệu ứng tự chạy chỉ kéo dài tối đa 5 giây, không lặp vô hạn.
-- Không dùng thư viện hay font ngoài, không có công cụ theo dõi.
+- **Từng bước** (mặc định): mỗi lần hiện một bước. Chuyển bằng phím ← →, nút "Bước trước/tiếp", mục lục bên trái (máy tính) hoặc thanh dưới cùng (điện thoại). Liên kết dạng `/chuong/3/#noisy-neighbours` mở thẳng một bước.
+- **Cả chương**: cuộn liền như một bài viết. Đổi chế độ ở nút phía trên danh sách bước.
+- Ô **Xong** ở mỗi bước (hoặc phím X) lưu tiến độ trong trình duyệt. Nhiệm vụ phụ (`S1, S2...`) đếm riêng, không ảnh hưởng tiến độ cốt truyện. Trang chủ nhớ bước đang đọc dở.
+- Tắt JavaScript thì mọi bước đều hiện đầy đủ. Giao diện sáng/tối theo hệ thống, đổi tay được. Tôn trọng `prefers-reduced-motion`. Không có công cụ theo dõi.
 
-## Cấu trúc và cách dựng lại
+## Cấu trúc
 
-- `chapters/NN-*.md`: nội dung từng chương (nguồn). Định dạng mô tả ở đầu `build.py`.
-- `images/chNN/` và `images/manifest.json`: hình lấy từ bài gốc, ghép đúng mục theo tên mục tiêu. `images/chNN/t/` là ảnh thu nhỏ (rộng 560px) do `make-thumbs.py` tạo (cần Pillow); chạy lại khi thêm ảnh mới.
-- `web-assets/`: `style.css`, `app.js`, `robots.txt`.
-- `build.py`: chuyển Markdown thành HTML tĩnh ở gốc repo, chỉ dùng thư viện chuẩn của Python. Chạy `python3 build.py`.
-- `index.html`, `chapter-NN.html`, `style.css`, `app.js`: trang đã dựng, GitHub Pages phát hành từ gốc repo.
+- `chapters/NN-*.md`: nội dung từng chương (nguồn), Markdown mở rộng, định dạng mô tả bên dưới.
+- `images/chNN/` và `images/manifest.json`: hình lấy từ bài gốc, ghép đúng mục theo tên mục tiêu. `images/chNN/t/` là ảnh thu nhỏ do `make-thumbs.py` tạo (cần Pillow); chạy lại khi thêm ảnh mới.
+- `site/`: mã nguồn trang web. Next.js (xuất tĩnh) + Tailwind CSS v4 + các component chép theo kiểu shadcn/ui. React chỉ chạy lúc build để sinh HTML; bước postbuild gỡ toàn bộ runtime React/Next, nên trình duyệt chỉ nhận HTML, CSS, font và một file JavaScript thuần nhỏ (`site/client/main.ts`).
+- Ở gốc repo: `index.html`, `chuong/`, `_next/`, `assets/`, `404.html`, `chapter-NN.html` (chuyển hướng từ đường dẫn cũ) là **bản đã dựng**, GitHub Pages phát hành từ nhánh `main`, thư mục gốc. Đừng sửa tay các file này.
 
-Front matter của chương có thêm khóa tùy chọn `hero: N` để chọn ảnh số N làm ảnh nền đầu trang (mặc định là ảnh đầu tiên; nên tránh ảnh màn hình thông tin kẻ địch).
+## Dựng lại
 
-Xem thử trên máy: `python3 -m http.server 8765` ở thư mục gốc, rồi mở `http://127.0.0.1:8765/`.
+```bash
+cd site
+npm ci
+npm run build          # next build, rồi postbuild: đóng gói JS, gỡ runtime, ghi CSP kèm hash
+npm run publish:root   # chép site/out ra gốc repo
+```
+
+Xem thử trên máy: tạo một thư mục chứa liên kết `Final-Fantasy-7-VII-Remake-Walkthrough` trỏ tới gốc repo (site dùng basePath của GitHub Pages), chạy `python3 -m http.server` trong thư mục đó và mở `http://127.0.0.1:8000/Final-Fantasy-7-VII-Remake-Walkthrough/`.
+
+## Định dạng chương
+
+```
+---
+number: 3
+title: Home Sweet Slum
+area: Sector 7 Slums
+summary: Một câu tóm tắt chương.
+source: https://www.powerpyx.com/...
+hero: 4              (tùy chọn) số ảnh làm ảnh đầu trang; mặc định là ảnh đầu tiên
+---
+Đoạn dẫn nhập (tùy chọn).
+
+## Tên mục tiêu trong game        <- mỗi ## là một bước
+Đoạn văn, **đậm**, `code`, [chữ](url), nút bấm {□} {R1}.
+- gạch đầu dòng
+1. mục có thứ tự
+   - mục con thụt lề
+
+:::chest 2 Potions               <- rương
+Vị trí rương.
+:::
+```
+
+Các khối khác: `pickup` (cầu Materia), `boss` (dòng đầu `weak: A, B` thành chip điểm yếu), `tip`, `warn`, `hard` (mẹo Hard Mode), `reward` (phần thưởng, vào bảng tổng hợp vật phẩm). Nhiệm vụ phụ là bước có tiêu đề `## Side Quest: Tên`, mở đầu bằng `:::quest Người giao · Địa điểm` kèm danh sách `Mở khóa:` / `Thưởng:`. Hình ảnh lấy từ `images/manifest.json` theo tên mục tiêu (không ghi trong `.md`).
 
 ## Quy ước
 
