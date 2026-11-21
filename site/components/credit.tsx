@@ -1,4 +1,5 @@
 import { SOURCE_ORIGIN } from "@/lib/content";
+import { withBase } from "@/lib/utils";
 
 /** Ghi nguồn rõ ràng trên mọi trang (bản dịch không chính thức, nội dung và ảnh thuộc PowerPyx). */
 export function CreditStrip({ source }: { source: string }) {
@@ -24,7 +25,11 @@ export function Footer() {
         <a href={SOURCE_ORIGIN} rel="noopener noreferrer" className="text-link underline underline-offset-[3px] hover:text-fg">
           PowerPyx.com
         </a>
-        . Bản dịch cá nhân, chỉ để tra cứu khi chơi. Nếu chủ sở hữu yêu cầu gỡ, trang sẽ được gỡ.
+        . Bản dịch cá nhân, chỉ để tra cứu khi chơi. Nếu chủ sở hữu yêu cầu gỡ, trang sẽ được gỡ.{" "}
+        <a href={withBase("/quyen-rieng-tu/")} className="text-link underline underline-offset-[3px] hover:text-fg">
+          Quyền riêng tư và bản quyền
+        </a>
+        .
       </p>
     </footer>
   );

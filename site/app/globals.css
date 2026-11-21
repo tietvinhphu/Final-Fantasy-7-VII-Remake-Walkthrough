@@ -246,8 +246,8 @@ html[data-mode="list"] .bottombar {
 /* Nút chế độ đọc đang chọn */
 html[data-mode="focus"] .mode-btn[data-mode-btn="focus"],
 html[data-mode="list"] .mode-btn[data-mode-btn="list"] {
-  background: var(--hazard-fill);
-  color: var(--on-hazard);
+  background: var(--fg);
+  color: var(--bg);
 }
 
 /* Chế độ cả chương: vạch ngăn giữa các bước */

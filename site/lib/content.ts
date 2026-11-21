@@ -157,7 +157,7 @@ function collectLoot(nodes: Node[], acc: LootItem[]) {
 
 function toImg(file: string): Img {
   const p = path.posix.parse(file);
-  const thumb = path.posix.join(p.dir, "t", p.base);
+  const thumb = path.posix.join(p.dir, "t", `${p.name}.webp`);
   const hasThumb = fs.existsSync(path.join(ROOT, thumb));
   return { src: file, thumb: hasThumb ? thumb : file, hasThumb };
 }

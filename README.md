@@ -21,6 +21,8 @@ Hướng dẫn tiếng Việt **không chính thức**, dùng để tra cứu kh
 - **Từng bước** (mặc định): mỗi lần hiện một bước. Chuyển bằng phím ← →, nút "Bước trước/tiếp", mục lục bên trái (máy tính) hoặc thanh dưới cùng (điện thoại). Liên kết dạng `/chuong/3/#noisy-neighbours` mở thẳng một bước.
 - **Cả chương**: cuộn liền như một bài viết. Đổi chế độ ở nút phía trên danh sách bước.
 - Ô **Xong** ở mỗi bước (hoặc phím X) lưu tiến độ trong trình duyệt. Nhiệm vụ phụ (`S1, S2...`) đếm riêng, không ảnh hưởng tiến độ cốt truyện. Trang chủ nhớ bước đang đọc dở.
+- Trang chủ có mục **Sao lưu tiến độ**: xuất ra tệp JSON, nhập lại ở máy khác (gộp với tiến độ có sẵn), hoặc xóa. Tiến độ chỉ nằm trong trình duyệt, không có tài khoản hay máy chủ.
+- Trang [Quyền riêng tư và bản quyền](https://tietvinhphu.github.io/Final-Fantasy-7-VII-Remake-Walkthrough/quyen-rieng-tu/) nói rõ site không thu thập dữ liệu gì, nguồn nội dung và cách yêu cầu gỡ.
 - Tắt JavaScript thì mọi bước đều hiện đầy đủ. Giao diện sáng/tối theo hệ thống, đổi tay được. Tôn trọng `prefers-reduced-motion`. Không có công cụ theo dõi.
 
 ## Cấu trúc
@@ -35,11 +37,18 @@ Hướng dẫn tiếng Việt **không chính thức**, dùng để tra cứu kh
 ```bash
 cd site
 npm ci
+npm run check          # tsc + kiểm tra nội dung (khối ::: đóng đủ, ảnh tồn tại, có nguồn, id không trùng)
 npm run build          # next build, rồi postbuild: đóng gói JS, gỡ runtime, ghi CSP kèm hash
 npm run publish:root   # chép site/out ra gốc repo
 ```
 
 Xem thử trên máy: tạo một thư mục chứa liên kết `Final-Fantasy-7-VII-Remake-Walkthrough` trỏ tới gốc repo (site dùng basePath của GitHub Pages), chạy `python3 -m http.server` trong thư mục đó và mở `http://127.0.0.1:8000/Final-Fantasy-7-VII-Remake-Walkthrough/`.
+
+## Kiểm tra và điểm quay lại
+
+- GitHub Actions (`.github/workflows/check.yml`) chạy mỗi lần push/PR: cài đúng theo lockfile, `npm run check`, dựng thử, và cảnh báo nếu bản đã dựng trong repo lệch mã nguồn. Bản dựng ổn định (mã build cố định), hai lần dựng cho kết quả giống hệt.
+- `CLAUDE.md` mô tả cấu trúc, quy tắc không được phá và cách làm việc an toàn cho AI/người đóng góp.
+- Nhánh `archive/v1-python-build` giữ bản trước khi thiết kế lại (bộ dựng Python). Quay lại: `git switch -c khoi-phuc archive/v1-python-build`.
 
 ## Định dạng chương
 

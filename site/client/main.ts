@@ -8,6 +8,7 @@ const THEME = "ff7r-vi-theme";
 const MODE = "ff7r-vi-mode";
 const PROGRESS = "ff7r-vi-progress:";
 const LAST = "ff7r-vi-last:";
+const RECENT = "ff7r-vi-recent";
 const root = document.documentElement;
 
 const get = (k: string): string | null => {
@@ -59,34 +60,156 @@ function initChrome() {
 }
 
 /* ---------- trang chủ ---------- */
-function initHome() {
+const knownIds = (row: Element) => new Set((row.getAttribute("data-ids") ?? "").split(" ").filter(Boolean));
+
+/** Điền tiến độ từng chương và nút "Tiếp tục". Chỉ đếm id còn tồn tại (id lỗi thời bị bỏ qua, không làm lệch số). */
+function renderHome() {
   let lastTarget: { href: string; text: string } | null = null;
-  let lastRank = -1;
+  let recent: { key?: unknown; id?: unknown } = {};
+  try {
+    recent = JSON.parse(get(RECENT) ?? "{}") ?? {};
+  } catch {
+    recent = {};
+  }
   qsa("[data-home-ch]").forEach((row) => {
     const key = row.getAttribute("data-home-ch") ?? "";
     const total = parseInt(row.getAttribute("data-total") ?? "0", 10);
-    const ids = idsOf(get(PROGRESS + key));
+    const known = knownIds(row);
+    const ids = idsOf(get(PROGRESS + key)).filter((id) => known.has(id));
     const n = Math.min(total, ids.filter((id) => !id.startsWith("side-quest-")).length);
     const text = qs("[data-prog-text]", row);
     if (text) text.textContent = `${n}/${total}`;
     qs("[data-prog-bar]", row)?.style.setProperty("--p", String(total ? n / total : 0));
-    const last = get(LAST + key);
-    if (last) {
-      const rank = ids.length > 0 ? 1 : 0;
-      if (rank >= lastRank) {
-        lastRank = rank;
-        lastTarget = { href: `${row.getAttribute("data-href")}#${last}`, text: row.getAttribute("data-title") ?? "" };
-      }
+    if (recent.key === key && typeof recent.id === "string" && known.has(recent.id)) {
+      lastTarget = { href: `${row.getAttribute("data-href")}#${recent.id}`, text: row.getAttribute("data-title") ?? "" };
     }
   });
+  // Một nút chính mỗi màn hình: có tiến độ thì "Tiếp tục" là nút chính, chưa có thì "Bắt đầu".
   const cont = qs<HTMLAnchorElement>("[data-continue]");
-  if (cont && lastTarget) {
+  const start = qs<HTMLAnchorElement>("[data-start]");
+  if (!cont || !start) return;
+  const setPrimary = (on: boolean) => {
+    if ((cont.dataset.swapped === "1") === on) return;
+    const cls = start.className;
+    start.className = cont.className;
+    cont.className = cls;
+    cont.dataset.swapped = on ? "1" : "";
+    if (on) start.before(cont);
+    else start.after(cont);
+  };
+  if (lastTarget) {
     const lt = lastTarget as { href: string; text: string };
     cont.href = lt.href;
     cont.hidden = false;
     const t = qs("[data-continue-text]", cont);
     if (t) t.textContent = lt.text;
+    setPrimary(true);
+  } else {
+    cont.hidden = true;
+    setPrimary(false);
   }
+}
+
+/** Sao lưu / khôi phục / xóa tiến độ. Định dạng có phiên bản để đổi cấu trúc sau này vẫn nhập được bản cũ. */
+function initBackup() {
+  const status = qs("[data-backup-status]");
+  const say = (m: string) => {
+    if (status) status.textContent = m;
+  };
+  const rows = () => qsa("[data-home-ch]");
+
+  document.addEventListener("click", (e) => {
+    const t = e.target as Element;
+    if (t.closest("[data-export]")) {
+      const progress: Record<string, string[]> = {};
+      const last: Record<string, string> = {};
+      let n = 0;
+      rows().forEach((row) => {
+        const key = row.getAttribute("data-home-ch") ?? "";
+        const ids = idsOf(get(PROGRESS + key)).filter((id) => knownIds(row).has(id));
+        if (ids.length) {
+          progress[key] = ids;
+          n += ids.length;
+        }
+        const l = get(LAST + key);
+        if (l) last[key] = l;
+      });
+      const data = { app: "ff7r-vi", version: 1, exportedAt: new Date().toISOString(), progress, last };
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: "application/json" }));
+      a.download = `ff7r-vi-tien-do-${data.exportedAt.slice(0, 10)}.json`;
+      a.click();
+      setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+      say(`Đã xuất ${n} bước đã xong. Giữ tệp này để khôi phục ở máy khác.`);
+    } else if (t.closest("[data-reset]")) {
+      if (!confirm("Xóa toàn bộ tiến độ đã lưu trong trình duyệt này? Không thể hoàn tác. Nếu muốn giữ lại, hãy xuất tiến độ trước.")) return;
+      rows().forEach((row) => {
+        const key = row.getAttribute("data-home-ch") ?? "";
+        try {
+          localStorage.removeItem(PROGRESS + key);
+          localStorage.removeItem(LAST + key);
+        } catch {
+          /* bỏ qua */
+        }
+      });
+      try {
+        localStorage.removeItem(RECENT);
+      } catch {
+        /* bỏ qua */
+      }
+      renderHome();
+      say("Đã xóa tiến độ.");
+    }
+  });
+
+  qs<HTMLInputElement>("[data-import]")?.addEventListener("change", async (e) => {
+    const input = e.target as HTMLInputElement;
+    const file = input.files?.[0];
+    input.value = "";
+    if (!file) return;
+    if (file.size > 1_000_000) return say("Tệp quá lớn, không phải bản sao lưu của site này.");
+    let data: { app?: unknown; version?: unknown; progress?: unknown; last?: unknown };
+    try {
+      data = JSON.parse(await file.text());
+    } catch {
+      return say("Không đọc được tệp: đây không phải JSON hợp lệ.");
+    }
+    if (!data || data.app !== "ff7r-vi") return say("Tệp này không phải bản sao lưu tiến độ của site.");
+    if (data.version !== 1) return say(`Phiên bản sao lưu ${String(data.version)} chưa được hỗ trợ.`);
+    const known = new Map(rows().map((r) => [r.getAttribute("data-home-ch") ?? "", knownIds(r)]));
+    let added = 0;
+    let ignored = 0;
+    const progress = data.progress && typeof data.progress === "object" ? (data.progress as Record<string, unknown>) : {};
+    for (const [key, list] of Object.entries(progress)) {
+      const kn = known.get(key);
+      if (!Array.isArray(list)) continue;
+      if (!kn) {
+        ignored += list.length;
+        continue;
+      }
+      const cur = new Set(idsOf(get(PROGRESS + key)));
+      for (const id of list) {
+        if (typeof id === "string" && kn.has(id)) {
+          if (!cur.has(id)) {
+            cur.add(id);
+            added++;
+          }
+        } else ignored++;
+      }
+      put(PROGRESS + key, JSON.stringify([...cur]));
+    }
+    const last = data.last && typeof data.last === "object" ? (data.last as Record<string, unknown>) : {};
+    for (const [key, id] of Object.entries(last)) {
+      if (typeof id === "string" && known.get(key)?.has(id) && !get(LAST + key)) put(LAST + key, id);
+    }
+    renderHome();
+    say(`Đã nhập ${added} bước mới (gộp với tiến độ hiện có). Bỏ qua ${ignored} mục không còn tồn tại.`);
+  });
+}
+
+function initHome() {
+  renderHome();
+  initBackup();
 }
 
 /* ---------- trang chương ---------- */
@@ -150,6 +273,7 @@ function initChapter(stage: HTMLElement) {
     current = id;
     paintCurrent();
     put(LAST + chapterKey, id);
+    put(RECENT, JSON.stringify({ key: chapterKey, id }));
     if (location.hash !== `#${id}`) history.replaceState(null, "", `#${id}`);
     if (scroll) {
       if (isList()) document.getElementById(id)?.scrollIntoView({ block: "start", behavior: "instant" });
@@ -162,6 +286,8 @@ function initChapter(stage: HTMLElement) {
   const fromHash = decodeURIComponent(location.hash.slice(1));
   if (ids.includes(fromHash)) current = fromHash;
   paintCurrent();
+  put(LAST + chapterKey, current);
+  put(RECENT, JSON.stringify({ key: chapterKey, id: current }));
   if (ids.includes(fromHash) && !isList()) requestAnimationFrame(stageTop);
 
   const outline = qs<HTMLDialogElement>("#outline-dialog");
@@ -176,9 +302,12 @@ function initChapter(stage: HTMLElement) {
     if (!img || !cap || !list.length) return;
     idx = (i + list.length) % list.length;
     const a = list[idx];
-    img.src = a.href;
+    const label = `${a.dataset.cap ?? ""} · ${idx + 1}/${list.length}`;
+    cap.textContent = "Đang tải…";
+    img.onload = () => (cap.textContent = label);
+    img.onerror = () => (cap.textContent = "Không tải được hình này.");
     img.alt = `${a.dataset.cap ?? "Hình minh họa"}, hình ${idx + 1} trên ${list.length}`;
-    cap.textContent = `${a.dataset.cap ?? ""} · ${idx + 1}/${list.length}`;
+    img.src = a.href;
   };
 
   /* một trình nghe click cho mọi điều khiển */
@@ -286,6 +415,7 @@ function initChapter(stage: HTMLElement) {
           current = hit.target.id;
           paintCurrent();
           put(LAST + chapterKey, current);
+          put(RECENT, JSON.stringify({ key: chapterKey, id: current }));
           history.replaceState(null, "", `#${current}`);
         }
       },

@@ -39,7 +39,7 @@ export default function Home() {
                 duyệt của bạn.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <a href={withBase(`/chuong/${chapters[0].num}/`)} className={buttonVariants({ size: "default" })}>
+                <a href={withBase(`/chuong/${chapters[0].num}/`)} data-start="" className={buttonVariants({ size: "default" })}>
                   Bắt đầu từ Chương 1
                   <ArrowRight aria-hidden="true" />
                 </a>
@@ -103,6 +103,7 @@ export default function Home() {
                 key={c.num}
                 data-home-ch={c.key}
                 data-total={c.nMain}
+                data-ids={c.steps.map((x) => x.id).join(" ")}
                 data-href={withBase(`/chuong/${c.num}/`)}
                 data-title={`Chương ${c.num}: ${c.title}`}
                 className="border-b border-line"
@@ -146,6 +147,32 @@ export default function Home() {
               </li>
             ))}
           </ul>
+
+          <details id="sao-luu" className="mt-12 rounded-md border border-line bg-panel">
+            <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-3 px-4 font-bold">
+              Sao lưu tiến độ
+              <span className="label text-subtle">Xuất · Nhập · Xóa</span>
+            </summary>
+            <div className="grid gap-4 border-t border-line p-4">
+              <p className="max-w-[62ch] text-[0.95rem] leading-relaxed text-muted">
+                Tiến độ chỉ nằm trong trình duyệt này và không được gửi đi đâu. Xóa dữ liệu trình duyệt hoặc đổi máy là mất. Hãy xuất ra tệp để giữ, rồi nhập lại ở máy khác (tiến độ
+                được gộp với những gì máy đó đã có).
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <button type="button" data-export="" className={buttonVariants({ variant: "outline" })}>
+                  Xuất tiến độ
+                </button>
+                <label className={cn(buttonVariants({ variant: "outline" }), "cursor-pointer has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-hazard")}>
+                  Nhập tiến độ
+                  <input type="file" accept="application/json,.json" data-import="" className="sr-only" />
+                </label>
+                <button type="button" data-reset="" className={cn(buttonVariants({ variant: "ghost" }), "text-boss hover:bg-boss-bg")}>
+                  Xóa tiến độ
+                </button>
+              </div>
+              <p role="status" aria-live="polite" data-backup-status="" className="min-h-6 text-[0.95rem] text-mako" />
+            </div>
+          </details>
         </section>
       </main>
       <Footer />
