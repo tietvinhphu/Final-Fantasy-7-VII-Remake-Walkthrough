@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Dựng trang web tĩnh từ chapters/*.md vào docs/. Chỉ dùng thư viện chuẩn.
+"""Dựng trang web tĩnh từ chapters/*.md ra gốc repo (GitHub Pages phát hành từ gốc). Chỉ dùng thư viện chuẩn.
 
 Chạy:  python3 build.py
-Xem thử:  cd docs && python3 -m http.server 8765
+Xem thử:  python3 -m http.server 8765
 """
 import html
 import re
@@ -11,8 +11,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "chapters"
-OUT = ROOT / "docs"
+OUT = ROOT
 ASSETS = ROOT / "web-assets"
+ORIGIN = "https://www.powerpyx.com/"
 
 SITE_TITLE = "Final Fantasy VII Remake — Hướng dẫn tiếng Việt"
 TITLE_SUFFIX = " (Hướng dẫn, bản dịch tiếng Việt)"
@@ -90,8 +91,19 @@ def render(md, chapter_key):
                 out.append("<ul>" + "".join(f"<li>{inline(it)}</li>" for it in items) + "</ul>")
             after_objective_label = False
             continue
+        if ln.startswith("!["):
+            shots = []
+            while i < len(lines) and lines[i].startswith("!["):
+                mm = re.match(r"!\[([^\]]*)\]\(([^)\s]+)\)", lines[i])
+                if mm:
+                    shots.append(f'<figure><img loading="lazy" decoding="async" src="{html.escape(mm.group(2))}" '
+                                 f'alt="{html.escape(mm.group(1))}"></figure>')
+                i += 1
+            out.append('<div class="shots">' + "".join(shots) + "</div>")
+            after_objective_label = False
+            continue
         para = []
-        while i < len(lines) and lines[i].strip() and not re.match(r"(#{1,6}\s|>|- )", lines[i]):
+        while i < len(lines) and lines[i].strip() and not re.match(r"(#{1,6}\s|>|- |!\[)", lines[i]):
             para.append(lines[i].strip())
             i += 1
         after_objective_label = para[0].startswith("**Mục tiêu")
@@ -99,7 +111,7 @@ def render(md, chapter_key):
     return "\n".join(out), toc, n_obj, title
 
 
-def page(title, body, rel, side="", nav="", key="", total=0):
+def page(title, body, rel, side="", nav="", key="", total=0, source=ORIGIN):
     attrs = f' data-chapter="{key}" data-total="{total}"' if key else ""
     return f"""<!DOCTYPE html>
 <html lang="vi">
@@ -118,11 +130,13 @@ def page(title, body, rel, side="", nav="", key="", total=0):
 <a class="brand" href="{rel}index.html">FF7 Remake · Hướng dẫn tiếng Việt</a>
 <button type="button" id="theme-toggle" class="btn" aria-label="Đổi giao diện sáng/tối">Giao diện</button>
 </header>
+<aside class="credit" role="note">Bản dịch tiếng Việt <strong>không chính thức</strong> từ hướng dẫn của <strong>PowerPyx</strong> (tác giả Gage). Nội dung gốc và hình ảnh thuộc bản quyền PowerPyx. Đọc bài gốc: <a href="{source}" rel="noopener noreferrer">{html.escape(source.replace("https://", ""))}</a></aside>
 <div class="layout">
 {side}<main>
 {body}
 {nav}</main>
 </div>
+<footer class="foot">Nguồn: <a href="{ORIGIN}" rel="noopener noreferrer">PowerPyx.com</a> · Bản dịch cá nhân, chỉ để tra cứu khi chơi. Nếu chủ sở hữu yêu cầu gỡ, trang sẽ được gỡ.</footer>
 </body>
 </html>
 """
@@ -134,13 +148,14 @@ def main():
         num = int(f.name.split("-", 1)[0])
         key = f"ff7r-vi-ch{num:02d}"
         body, toc, n_obj, title = render(f.read_text(encoding="utf-8"), key)
-        chapters.append(dict(num=num, key=key, file=f"chapter-{num:02d}.html", body=body,
+        src_m = re.search(r"<(https://www\.powerpyx\.com/[^>\s]+)>", f.read_text(encoding="utf-8"))
+        chapters.append(dict(num=num, key=key, file=f"chapter-{num:02d}.html", body=body, source=src_m.group(1) if src_m else ORIGIN,
                              toc=toc, n_obj=n_obj, title=title.removesuffix(TITLE_SUFFIX)))
-    if OUT.exists():
-        shutil.rmtree(OUT)
-    OUT.mkdir()
+    for old in OUT.glob("chapter-*.html"):
+        old.unlink()
     for a in ASSETS.iterdir():
         shutil.copy(a, OUT / a.name)
+    (OUT / ".nojekyll").write_text("", encoding="utf-8")
 
     for idx, c in enumerate(chapters):
         side = '<nav class="toc" aria-label="Mục lục chương"><p class="toc-title">Trong chương này</p><ol>' + \
@@ -152,12 +167,13 @@ def main():
         nav += (f'<a href="{next_l["file"]}">{html.escape(next_l["title"])} →</a>' if next_l else "<span></span>")
         nav += "</nav>\n"
         (OUT / c["file"]).write_text(
-            page(c["title"], c["body"], "", side, nav, c["key"], c["n_obj"]), encoding="utf-8")
+            page(c["title"], c["body"], "", side, nav, c["key"], c["n_obj"], c["source"]), encoding="utf-8")
 
     rows = "".join(
         f'<li><a href="{c["file"]}" data-chapter="{c["key"]}" data-total="{c["n_obj"]}">'
         f'<span class="ch-title">{html.escape(c["title"])}</span>'
-        f'<span class="ch-progress" aria-label="Tiến độ mục tiêu"></span></a></li>' for c in chapters)
+        f'<span class="ch-progress" aria-label="Tiến độ mục tiêu"></span></a>'
+        f'<a class="src" href="{c["source"]}" rel="noopener noreferrer">Bài gốc trên PowerPyx ↗</a></li>' for c in chapters)
     index_body = ("<h1>Final Fantasy VII Remake</h1>"
                   "<p>Bản dịch tiếng Việt cá nhân các bài hướng dẫn của PowerPyx, dùng để tra cứu khi chơi. "
                   "Tiến độ mục tiêu lưu trong trình duyệt của bạn.</p>"

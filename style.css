@@ -60,3 +60,11 @@ code { background: var(--quote); padding: 0.1rem 0.35rem; border-radius: 0.25rem
   .toc li a { border: 1px solid var(--line); border-radius: 0.4rem; }
   h1 { font-size: 1.55rem; }
 }
+.credit { padding: 0.55rem 1rem; text-align: center; font-size: 0.85rem; background: var(--accent-soft); border-bottom: 1px solid var(--line); color: var(--text); }
+.credit a { word-break: break-all; }
+.shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 0.6rem; margin: 0 0 1.4rem; }
+.shots figure { margin: 0; }
+.shots img { display: block; width: 100%; height: auto; border-radius: 0.4rem; border: 1px solid var(--line); background: var(--panel); aspect-ratio: 16 / 9; object-fit: cover; }
+.chapters li { display: grid; gap: 0.25rem; }
+.chapters .src { padding: 0 0.3rem; background: none; border: 0; font-size: 0.8rem; color: var(--muted); }
+.foot { max-width: 72rem; margin: 0 auto; padding: 1rem 1rem 3rem; font-size: 0.8rem; color: var(--muted); border-top: 1px solid var(--line); }

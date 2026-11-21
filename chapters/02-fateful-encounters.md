@@ -28,7 +28,11 @@ Chương 2 bắt đầu khi bạn hoàn thành Chương 1: The Destruction of Ma
 
 Ngay sau khi Chương 1 kết thúc, bạn ở trong một đường hầm cùng cả nhóm, tiếp tục cuộc tẩu thoát khỏi khu lò phản ứng. Sau khi chui qua đoạn bị sập, trước khi rẽ phải, có một rương bạn có thể mở, chứa 2 Potions.
 
+![Hình minh họa](images/ch02/01.jpg)
+
 Sau khi ra khỏi cánh cửa mà Jessie cho nổ tung, bạn có một đoạn cắt cảnh ngắn, rồi được bảo đi theo nhóm tiếp. Ở bên phải, trước khi lên cầu thang, có một rương khác chứa một Ether.
+
+![Hình minh họa](images/ch02/02.jpg)
 
 Tiếp tục dọc đường, và sau một đoạn hội thoại bạn nhận được Healing Materia, kèm phần hướng dẫn gắn Materia vào vũ khí và giáp để trang bị chúng. Gắn xong thì thoát ra và đi tiếp về phía trước.
 
@@ -36,7 +40,11 @@ Tiếp tục dọc đường, và sau một đoạn hội thoại bạn nhận �
 
 Đi thẳng rồi sang trái, ngay trước tòa nhà ARCADE, cạnh một chiếc xe có một rương khác chứa 2 Potions.
 
+![Hình minh họa](images/ch02/03.jpg)
+
 Tiếp tục tiến lên dọc đường, sau khi leo cầu thang, trước khi bước lên đống đổ nát, có một rương chứa 3 Grenades. Đi tiếp theo con đường một chiều cho tới khi tới một đoạn cắt cảnh khác.
+
+![Hình minh họa](images/ch02/04.jpg)
 
 ## Follow Him
 
@@ -46,17 +54,29 @@ Tiếp tục tiến lên dọc đường, sau khi leo cầu thang, trước khi 
 
 Sau đoạn cắt cảnh, bạn có thể đi tiếp theo con đường một chiều. Khi tới mái nhà, nơi game chỉ cho bạn thấy lò phản ứng lần nữa, trước khi đi xuống phía bên kia sẽ có thêm một rương chứa 3 Potions.
 
+![Hình minh họa](images/ch02/05.jpg)
+
 Leo xuống thang và đi về hướng Tây dọc con phố. Bạn chưa thể đi về hướng Đông, nơi có lính, vì game đang chặn. Đi theo hướng ngược lại để xem một đoạn cắt cảnh, nơi bạn gặp một nhân vật chính mới. Hãy trả lời cô ấy bằng "How much?" và cô sẽ cho bạn một Yellow Flower. Sau thêm một đoạn cắt cảnh, một nhóm Security Officer sẽ tìm cách chặn bạn, và giờ bạn phải xử lý chúng.
+
+![Hình minh họa](images/ch02/06.jpg)
 
 ## Evade Pursuers
 
 Đi trước vào lối phía Đông mà lúc nãy bạn bị chặn, và hạ hai Security Officer cùng Guard Dog. Khi xử lý xong, nhặt quả cầu màu tím gần đó để nhận một HP Up Materia.
 
+![Hình minh họa](images/ch02/07.jpg)
+
 Tiếp theo đi vào con hẻm mà cô gái được cho thấy chạy xuống trong đoạn cắt cảnh. Cuối hẻm sẽ bị chặn, nhưng bạn có thể mở một rương gần đó để lấy một Hi-Potion.
+
+![Hình minh họa](images/ch02/08.jpg)
 
 Giờ đi về phía Nam, hướng tới nhóm kẻ địch. Hạ chúng rồi nhặt một quả cầu tím gần đó để nhận một Deadly Dodge Materia.
 
+![Hình minh họa](images/ch02/09.jpg)
+
 Đi xuống con phố phía Đông, hướng tới Security Officer và hai Guard Dog. Sau khi hạ chúng, ở cuối đường có một rương chứa một cặp Power Wristguards.
+
+![Hình minh họa](images/ch02/10.jpg)
 
 Tiếp tục đi về phía Nam tới khu vực có đài phun nước, và giờ bạn phải đối phó vài đợt kẻ địch. Đầu tiên là hai Officer và một Dog, rồi bốn Officer, tiếp theo là hai Shock Trooper, và cuối cùng là bốn Officer nữa.
 
@@ -64,19 +84,33 @@ Tiếp tục đi về phía Nam tới khu vực có đài phun nước, và gi�
 
 Sau khi hạ hết, bạn cần tìm một lối khác. Một chiếc thang gần đó được đánh dấu để bạn lên mái nhà. Trước khi leo, mở rương gần đó để lấy 2 Grenades.
 
+![Hình minh họa](images/ch02/11.jpg)
+
 Sau khi leo thang, một số kẻ địch sẽ xuất hiện phía sau và bắn vào bạn. Hãy phớt lờ chúng và tiếp tục đi dọc mái nhà.
 
 ## Break the Blockade
 
 Sau khi leo xuống lại một cái thang, sẽ có một rương gần đó chứa một Iron Bangle. Món này mạnh hơn Bronze Bangle của bạn và có một ô Materia, nên bạn nên đổi sang nó và gắn một trong các Materia vừa nhặt trước đó.
 
+![Hình minh họa](images/ch02/12.jpg)
+![Hình minh họa](images/ch02/13.jpg)
+
 Tiếp tục xuống hai cái thang tiếp theo để trở lại mặt đất, rồi đi dọc đường. Ở khu vực kế tiếp sẽ có thêm ba kẻ địch, kèm một loại kẻ địch người mới là Riot Trooper. Những tên này mang một tấm khiên lớn, nên bạn cần cố tấn công từ phía sau. Nếu bạn đánh vào mặt trước của khiên khi chúng đang đỡ, bạn sẽ bị choáng trong chốc lát và đứt chuỗi combo. Tuy nhiên chúng yếu hệ Fire, nên nếu có một lượt ATB, bạn có thể dùng Fire để gây sát thương lớn hoặc thậm chí hạ chúng ngay lập tức.
+
+![Hình minh họa](images/ch02/14.jpg)
 
 Đi tiếp và bạn tới một đoạn đường dài với ba Riot Trooper nữa cùng một nhóm Officer chặn đường. Khi đã xử lý xong, đi về hướng Đông và bạn có thể lên vài bậc thang tới khu vực phụ phía trên. Phía sau một số bàn ghế, bạn tìm thấy một rương khác chứa một Ether.
 
+![Hình minh họa](images/ch02/15.jpg)
+
 Đi tiếp theo con đường và bạn sẽ đánh một Riot Soldier khác cùng hai Guard Dog nữa. Ngay sau chúng bạn có thể vào một đoạn đường ngắn bị chặn có thêm một rương chứa một Hi-Potion.
 
+![Hình minh họa](images/ch02/16.jpg)
+
 Đi tiếp và bạn sẽ bị chặn bởi nhiều chiếc xe chở thêm rất nhiều quân. Cùng với nhóm xuất hiện phía sau bạn sẽ có một Riot Trooper có tên là The Huntsman. Hắn có nhiều máu hơn hẳn Riot Trooper thường, nhưng có thể xử lý theo cách tương tự. Đừng tấn công hắn khi khiên đang giơ lên, hãy đánh từ phía sau. Nếu bạn đánh hắn bằng Fire, hắn sẽ rơi vào trạng thái Pressure, cho phép bạn gây rất nhiều sát thương và làm hắn Stagger. Khi hạ xong hắn, bạn có một đoạn cắt cảnh và rời khỏi khu vực.
+
+![Hình minh họa](images/ch02/17.jpg)
+![Hình minh họa](images/ch02/18.jpg)
 
 ## Last Train
 
